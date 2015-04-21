@@ -1,0 +1,14 @@
+.eventkategori {
+	display: block;
+	overflow: hidden;
+	height: 100px;
+	width: auto;
+	border-radius: 5px;
+	margin-bottom: 1em;
+}
+
+.eventkategori img {
+	display: block;
+	min-width: 100%;
+	min-height: 100%;
+}
