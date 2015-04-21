@@ -1,0 +1,37 @@
+.eventkategori {
+	display: block;
+	overflow: hidden;
+	height: 100px;
+	width: auto;
+	border-radius: 5px;
+	margin-bottom: 1em;
+}
+
+.eventkategori img {
+	display: block;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+/*
+	FOOTER
+*/
+
+.blog-footer {
+	margin-top: 5em;
+	padding: 40px 0;
+	color: #888;
+	text-align: center;
+	background-color: #f1f1f1;
+	border-top: 1px solid #e1e1e1;
+}
+
+.blog-footer li {
+	list-style: none;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
