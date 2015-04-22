@@ -35,3 +35,17 @@
     width: 970px;
   }
 }
+
+.header {
+}
+
+.header .logo {
+	background-image: url("../img/logo.png");
+	background-position: left;
+	height: 200px;
+}
+
+.navbar {
+	border-top-right-radius: 0 !important;
+	border-top-left-radius: 0 !important;
+}
