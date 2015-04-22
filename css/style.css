@@ -43,6 +43,32 @@ body {
 	border-top-left-radius: 0 !important;
 }
 
+.eventkategori:hover{
+	-webkit-transform:scale(1.1);
+	-webkit-animation-name: kategori;
+	-webkit-animation-duration: 0.2s;
+	transform:scale(1.1);
+	animation-name: kategori;
+	animation-duration: 0.2s;
+}
+
+@-webkit-keyframes kategori {
+	from {
+		-webkit-transform:scale(1.0);	
+	}
+	to {
+		-webkit-transform:scale(1.1);
+	}
+}
+
+@keyframes kategori {
+	from {
+		transform:scale(1.0);	
+	}
+	to {
+		transform:scale(1.1);
+	}
+}
 /*
 	FOOTER
 */
