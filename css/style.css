@@ -1,16 +1,46 @@
-.eventkategori {
-	display: block;
-	overflow: hidden;
-	height: 100px;
-	width: auto;
-	border-radius: 5px;
-	margin-bottom: 1em;
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	/*
+	background: url('../img/background.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color:#333;
+	*/
 }
 
-.eventkategori img {
-	display: block;
-	min-width: 100%;
-	min-height: 100%;
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/*
+	HEADER
+*/
+
+.header {
+}
+
+.header .logo {
+	background-image: url("../img/logo.png");
+	background-position: left;
+	height: 100px;
+}
+
+@media (min-width: 768px) {
+	.header .logo {
+		height: 200px;
+	}
+}
+
+.navbar {
+	border-top-right-radius: 0 !important;
+	border-top-left-radius: 0 !important;
 }
 
 /*
@@ -30,22 +60,21 @@
 	list-style: none;
 }
 
-@media (min-width: 1200px) {
-  .container {
-    width: 970px;
-  }
+/*
+	FORSIDE
+*/
+
+.eventkategori {
+	display: block;
+	overflow: hidden;
+	height: 100px;
+	width: auto;
+	border-radius: 5px;
+	margin-bottom: 1em;
 }
 
-.header {
-}
-
-.header .logo {
-	background-image: url("../img/logo.png");
-	background-position: left;
-	height: 200px;
-}
-
-.navbar {
-	border-top-right-radius: 0 !important;
-	border-top-left-radius: 0 !important;
+.eventkategori img {
+	display: block;
+	min-width: 100%;
+	min-height: 100%;
 }
