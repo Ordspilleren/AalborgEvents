@@ -48,3 +48,5 @@ else{
 //luk databasen
 $DBH = null;
 ?>
+
+
