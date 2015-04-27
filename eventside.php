@@ -5,7 +5,8 @@
 		<div class="col-md-4">
 			<div class="event-info">
 				<img src="http://www.claussondberg.dk/wp-content/uploads/25-FAELS-Karneval-18.jpg" class="img-responsive" alt="">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, porro iure doloribus vitae nisi qui quo natus velit alias asperiores, officia vero accusamus explicabo ullam. Ratione aut atque excepturi praesentium.
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, porro iure doloribus vitae nisi qui quo natus velit alias asperiores, officia vero accusamus explicabo ullam. Ratione aut atque excepturi praesentium.</p>
+				<button type="button" class="btn btn-info btn-block">Køb billet</button>
 			</div>
 		</div>
 		<div class="col-md-5">
