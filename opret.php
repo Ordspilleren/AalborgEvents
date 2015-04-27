@@ -16,7 +16,7 @@ if(isset($_POST['fornavn'])){
 //hvis der ikke submitted.
 else {
 	// !!!!!skift lokationen her ved implementering senere!!!!!!!
-	header("Location: http://localhost:8888/p2/aalborgevents/opretform.php");
+	header("Location: http://localhost:7888/p2/aalborgevents/opretform.php");
 }
 
 
@@ -39,14 +39,14 @@ $STH->execute($nybruger);
 $_SESSION['nybruger'] = "1";
 $_SESSION['email'] = $email;
 $_SESSION['loggedin'] = "true";
-header("Location: http://localhost:8888/p2/aalborgevents/index.php");
+header("Location: http://localhost:7888/p2/aalborgevents/index.php");
 }
 
 else {
 	//Hvis emailen findes i databasen allerede.
 	$_SESSION["fejl"] = "5";
 	//!!!!skift lokation ved implementeringer!!!!
-	header("Location: http://localhost:8888/p2/aalborgevents/opretform.php");
+	header("Location: http://localhost:7888/p2/aalborgevents/opretform.php");
 }
 
 
