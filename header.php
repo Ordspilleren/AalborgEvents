@@ -26,7 +26,7 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Forside</a></li>
 					<li><a href="#contact">Arrangementer</a></li>
-					<li><a href="login.php">Log ind / Log ud</a></li>
+					<li><a href="loginform.php">Log ind / Log ud</a></li>
 					<li><a href="opretform.php">Min side / Opret bruger</a></li>
 				</ul>
 				<form class="navbar-form navbar-right">
