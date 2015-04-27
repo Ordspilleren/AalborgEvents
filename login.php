@@ -34,6 +34,7 @@ if ("$r[password]" == $pw){
 	header("Location: http://localhost:7888/p2/aalborgevents/index.php");
 }
 else{
+	$_SESSION['fejl'] = "1";
 	header("Location: http://localhost:7888/p2/aalborgevents/loginform.php");
 }
 

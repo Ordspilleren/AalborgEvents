@@ -14,12 +14,6 @@ body {
 	*/
 }
 
-@media (min-width: 1200px) {
-  .container {
-    width: 970px;
-  }
-}
-
 /*
 	HEADER
 */
@@ -309,12 +303,25 @@ body {
 	}
 }
 
+/*
+	EVENTSIDE
+*/
+
 .event-info {
 	background-color: #eee;
 	padding: 1em;
 	border-radius: 5px;
 }
 
+.event-info > img {
+	border-bottom: solid 5px #5CB85C;
+	margin-bottom: 1em;
+}
+
 .event-desc > h1 {
 	font-size: 17pt;
+}
+
+.featured-events {
+	background-color: #eee;
 }

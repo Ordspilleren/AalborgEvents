@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION['fejl'])){
+	echo "<script>alert('Forkert password')</script>";
+	unset($_SESSION['fejl']);
+}
+?>
 <? include('header.php'); ?>
 	<div class="container">
 		<div class="row min-form">
