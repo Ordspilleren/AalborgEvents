@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Aalborg Events</title>
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/bootstrap-theme.css">
-	<link rel="stylesheet" href="css/merecss.css">
-	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script>
-</head>
-<body>
+<? include('header.php'); ?>
 	<div class="container">
 		<div class="row min-form">
 			<div class="col-md-6 col-md-offset-3">
@@ -37,5 +26,4 @@
 		</div>
 	</div>
 	
-</body>
-</html>
+<? include('footer.php'); ?>
