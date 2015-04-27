@@ -25,16 +25,16 @@ $r = $STH->fetch();
 }
 else
 {
-	header("Location: http://localhost:8888/p2/aalborgevents/loginform.php");
+	header("Location: http://localhost:7888/p2/aalborgevents/loginform.php");
 }
 //tjek om password passer 
 if ("$r[password]" == $pw){
 	$_SESSION['loggedin']="true";
 	$_SESSION['email']=$email;
-	header("Location: http://localhost:8888/p2/aalborgevents/index.php");
+	header("Location: http://localhost:7888/p2/aalborgevents/index.php");
 }
 else{
-	header("Location: http://localhost:8888/p2/aalborgevents/loginform.php");
+	header("Location: http://localhost:7888/p2/aalborgevents/loginform.php");
 }
 
 
