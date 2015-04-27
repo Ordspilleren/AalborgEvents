@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['fejl'])){
+	echo "<script>alert('Email addressen er allerede brugt')</script>";
+	unset($_SESSION['fejl']);
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,6 +58,15 @@
 			</div>
 		</div>
 	</div>
+	<script>
+  		$("#form").submit(function(){
+    if($("#password").val()!=$("#pw2").val())
+     	{
+       	  	alert("password should be same");
+        	return false;
+     	}
+ 		})
+	</script>
 	
 </body>
 </html>

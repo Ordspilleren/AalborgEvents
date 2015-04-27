@@ -1,5 +1,5 @@
-
 <?php
+session_start();
 require_once('database.php');
 
 
@@ -12,9 +12,11 @@ if(isset($_POST['fornavn'])){
 	$pw = $_POST['password'];
 	$pwencrypt = md5($pw);
 }
+
 //hvis der ikke submitted.
-else{
-	echo "Noget gik galt, prøv igen.";
+else {
+	// !!!!!skift lokationen her ved implementering senere!!!!!!!
+	header("Location: http://localhost:8888/p2/aalborgevents/opretform.php");
 }
 
 
@@ -25,21 +27,27 @@ $STH->bindParam(':email', $email);
 $STH->execute();
 $tjek = $STH->fetch();
 
-
+//indset ny hvis den ikke findes:
 if (empty($tjek)){
 //indsæt ny bruger i databasen
 $nybruger = array( 'fornavn' => $fornavn, 'efternavn' => $efternavn, 'email' => $email, 'pw' => $pwencrypt);
-
 $q = "INSERT INTO Brugere (email, fornavn, efternavn, password) VALUES (:email, :fornavn, :efternavn, :pw)";
 $STH = $DBH->prepare($q);
 $STH->execute($nybruger);
+
+//!!!!skift lokation ved implementeringer!!!!
+$_SESSION['nybruger'] = "1";
+$_SESSION['email'] = $email;
+$_SESSION['loggedin'] = "true";
+header("Location: http://localhost:8888/p2/aalborgevents/index.php");
 }
+
 else {
-//Hvis brugeren findes allerede.
-
-echo "Email adressen er allerede brugt!";
+	//Hvis emailen findes i databasen allerede.
+	$_SESSION["fejl"] = "5";
+	//!!!!skift lokation ved implementeringer!!!!
+	header("Location: http://localhost:8888/p2/aalborgevents/opretform.php");
 }
-
 
 
 $DBH = null;

@@ -22,7 +22,6 @@ $r = $STH->fetch();
 echo "<br>";
 
 
-
 //print_r($r);
 }
 
@@ -38,10 +37,6 @@ if ("$r[password]" == $pw){
 else{
 	echo "shit forkert password, noget er helt galt her";
 }
-
-
-
-
 
 
 
