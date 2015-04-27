@@ -96,7 +96,7 @@ body {
 		-webkit-transform:scale(1.0);	
 	}
 	to {
-		-webkit-transform:scale(1.1);
+		-webkit-transform:scale(1.05);
 	}
 }
 
@@ -105,7 +105,7 @@ body {
 		transform:scale(1.0);	
 	}
 	to {
-		transform:scale(1.1);
+		transform:scale(1.05);
 	}
 }
 
@@ -125,6 +125,15 @@ body {
 	box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
 	padding: 0px;
 	margin: 0px 0px 20px;
+}
+
+.event-list > li:hover {
+	-webkit-transform:scale(1.05);
+	-webkit-animation-name: kategori;
+	-webkit-animation-duration: 0.2s;
+	transform:scale(1.05);
+	animation-name: kategori;
+	animation-duration: 0.2s;
 }
 
 .event-list > li > .info > .date {
@@ -299,3 +308,36 @@ body {
 		padding: 10px 0px 9px;
 	}
 }
+
+/*
+ * POPULÆRE EVENTS PÅ MIN SIDE
+*/
+
+.popular-event {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.popular-event > li {
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 0px 5px rgb(51, 51, 51);
+	box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+	padding: 0px;
+	margin: 0px 0px 20px;
+	background-color: rgb(245, 245, 245);
+	overflow: hidden;
+}
+
+.popular-eventt > li:hover {
+	-webkit-transform:scale(1.05);
+	-webkit-animation-name: kategori;
+	-webkit-animation-duration: 0.2s;
+	transform:scale(1.05);
+	animation-name: kategori;
+	animation-duration: 0.2s;
+}
+
+.popular-event > li > .info > .date {
+	float: right;
+	margin-right: 1em;
