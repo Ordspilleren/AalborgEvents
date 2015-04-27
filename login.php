@@ -19,23 +19,22 @@ $STH->execute();
 //hent brugerens data ned i et array.
 $r = $STH->fetch();
 
-echo "<br>";
 
 
 //print_r($r);
 }
-
+else
+{
+	header("Location: http://localhost:8888/p2/aalborgevents/loginform.php");
+}
 //tjek om password passer 
 if ("$r[password]" == $pw){
 	$_SESSION['loggedin']="true";
 	$_SESSION['email']=$email;
-	echo "den er dope!";
-	echo "<br>";
-	echo '<a class="btn" href="nextside.php">Gå videre</a>';
-
+	header("Location: http://localhost:8888/p2/aalborgevents/index.php");
 }
 else{
-	echo "shit forkert password, noget er helt galt her";
+	header("Location: http://localhost:8888/p2/aalborgevents/loginform.php");
 }
 
 
