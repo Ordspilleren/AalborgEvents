@@ -299,3 +299,13 @@ body {
 		padding: 10px 0px 9px;
 	}
 }
+
+.event-info {
+	background-color: #eee;
+	padding: 1em;
+	border-radius: 5px;
+}
+
+.event-desc > h1 {
+	font-size: 17pt;
+}
