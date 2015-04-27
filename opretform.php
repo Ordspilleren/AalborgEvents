@@ -14,7 +14,7 @@ include('header.php');
 						<h3>Opret bruger</h3>
 					</div>
 					<div class="panel-body">
-						<form action="opret.php" method="post">
+						<form action="opret.php" method="post" id="form">
 							
 								<div class="form-group">
 									<input type="text" name="fornavn" id="fornavn" class="form-control input-sm" placeholder="Indtast dit fornavn" required>
@@ -46,8 +46,9 @@ include('header.php');
 			</div>
 		</div>
 	</div>
-	<script>
-  		$("#form").submit(function(){
+
+	<script type='text/javascript'>
+	$("#form").submit(function(){
     if($("#password").val()!=$("#pw2").val())
      	{
        	  	alert("password should be same");

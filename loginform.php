@@ -23,7 +23,6 @@ if (isset($_SESSION['fejl'])){
 								<div class="form-group">
 									<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Skriv dit password" required>
 								</div>
-									
 								
 							<input type="submit" value="Login" class="btn btn-block">
 						</form>
