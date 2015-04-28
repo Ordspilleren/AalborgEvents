@@ -313,6 +313,45 @@ body {
 	font-size: 17pt;
 }
 
-.featured-events {
-	background-color: #eee;
+.featured-events > h1 {
+	font-size: 17pt;
+	margin-top: 0px;
+}
+
+.event-list-small {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.event-list-small > li {
+	background-color: rgb(245, 245, 245);
+	box-shadow: 0px 0px 5px rgb(51, 51, 51);
+	box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 80px;
+	padding: 0px;
+	margin: 0 0 10px 0;
+}
+
+.event-list-small > li > img {
+	display: inline-block;
+	float: left;
+	width: 80px;
+	height: 80px;
+	padding: 0px;
+	margin: 0 10px 0 0;
+}
+
+.event-list-small > li > .info > h1 {
+	font-size: 14pt;
+	margin: 0px;
+	padding: 0px;
+	line-height: 40px;
+}
+
+.event-list-small > li > .info {
+	line-height: 20px;
 }

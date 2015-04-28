@@ -22,7 +22,15 @@
 		</div>
 		<div class="col-md-4">
 			<div class="featured-events">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus a blanditiis tempora nobis! Quaerat non, ullam voluptates delectus sunt earum eaque et, mollitia iusto similique illo temporibus deleniti cum nesciunt.
+				<h1>Lignende events</h1>
+				<ul class="event-list-small">
+					<li>
+						<img alt="Independence Day" src="http://www.claussondberg.dk/wp-content/uploads/25-FAELS-Karneval-18.jpg" />
+						<div class="info">
+							<h1>Aalborg Karneval</h1>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
