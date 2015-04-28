@@ -1,11 +1,11 @@
 <?php
-session_start();
+include('header.php');
+
 if (isset($_SESSION['fejl'])){
 	echo "<script>alert('Forkert password')</script>";
 	unset($_SESSION['fejl']);
 }
 ?>
-<? include('header.php'); ?>
 	<div class="container">
 		<div class="row min-form">
 			<div class="col-md-6 col-md-offset-3">
@@ -32,4 +32,4 @@ if (isset($_SESSION['fejl'])){
 		</div>
 	</div>
 	
-<? include('footer.php'); ?>
+<?php include('footer.php'); ?>

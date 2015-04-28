@@ -1,10 +1,10 @@
 <?php
-session_start();
+include('header.php');
+
 if (isset($_SESSION['fejl'])){
 	echo "<script>alert('Email addressen er allerede brugt')</script>";
 	unset($_SESSION['fejl']);
 }
-include('header.php');
 ?>
 	<div class="container">
 		<div class="row min-form">
@@ -57,4 +57,4 @@ include('header.php');
  		})
 	</script>
 	
-<? include('footer.php'); ?>
+<?php include('footer.php'); ?>
