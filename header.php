@@ -1,5 +1,6 @@
 <?php
 session_start();
+require('functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +15,7 @@ session_start();
 <body>
 
 	<div class="container header">
-		<div class="logo">
-
-		</div>
+		<div class="logo"></div>
 		<nav class="navbar navbar-default">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -28,10 +27,10 @@ session_start();
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Forside</a></li>
-					<li><a href="#contact">Arrangementer</a></li>
-					<li><a href="loginform.php">Log ind / Log ud</a></li>
-					<li><a href="opretform.php">Min side / Opret bruger</a></li>
+					<li class="active"><a href="index.php">Forside</a></li>
+					<li><a href="eventliste.php">Arrangementer</a></li>
+					<li><a href="login.php"><?=(loggedIn() == true) ? "Log ud" : "Log ind"?></a></li>
+					<li><a href="opretform.php"><?=(loggedIn() == true) ? "Min side" : "Opret bruger"?></a></li>
 				</ul>
 				<form class="navbar-form navbar-right">
 					<input type="text" placeholder="Søg" class="form-control">
