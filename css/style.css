@@ -233,19 +233,7 @@ body {
 
 	.event-list > li > img  {
 		display: inline-block;
-	}
-
-	.event-list > li > img {
-		width: 120px;
 		float: left;
-	}
-
-	.event-list > li > .info {
-		background-color: rgb(245, 245, 245);
-		overflow: hidden;
-	}
-
-	.event-list > li > img {
 		width: 120px;
 		height: 120px;
 		padding: 0px;
@@ -253,11 +241,13 @@ body {
 	}
 
 	.event-list > li > .info {
+		background-color: rgb(245, 245, 245);
+		overflow: hidden;
 		position: relative;
 		height: 120px;
 		text-align: left;
 		padding-right: 40px;
-	}	
+	}
 
 	.event-list > li > .info > .title, 
 	.event-list > li > .info > .desc {
@@ -354,4 +344,80 @@ body {
 
 .event-list-small > li > .info {
 	line-height: 20px;
+}
+
+.event-info > .social > ul {
+	display: table;
+	list-style: none;
+	margin: 10px 0px 0px;
+	padding: 0px;
+	width: 100%;
+	text-align: center;
+}
+
+.event-info > .social > ul {
+	margin: 0px;
+}
+
+.event-info > .social > ul > li {
+	display: table-cell;
+	cursor: pointer;
+	color: rgb(30, 30, 30);
+	font-size: 11pt;
+	font-weight: 300;
+	padding: 3px 0px;
+}
+
+.event-info > .social > ul > li {    
+	padding: 0px;
+}
+
+.event-info > .social > ul > li > a {
+	padding: 3px 0px;
+} 
+
+.event-info > .social > ul > li:hover {
+	color: rgb(30, 30, 30);
+	background-color: rgb(200, 200, 200);
+}
+
+.facebook a,
+.twitter a,
+.google-plus a,
+.instagram a {
+	display: block;
+	width: 100%;
+	color: rgb(75, 110, 168) !important;
+}
+
+.twitter a {
+	color: rgb(79, 213, 248) !important;
+}
+
+.google-plus a {
+	color: rgb(221, 75, 57) !important;
+}
+
+.instagram a {
+	color: rgb(147, 99, 87) !important;
+}
+
+.facebook:hover a {
+	color: rgb(255, 255, 255) !important;
+	background-color: rgb(75, 110, 168) !important;
+}
+
+.twitter:hover a {
+	color: rgb(255, 255, 255) !important;
+	background-color: rgb(79, 213, 248) !important;
+}
+
+.google-plus:hover a {
+	color: rgb(255, 255, 255) !important;
+	background-color: rgb(221, 75, 57) !important;
+}
+
+.instagram:hover a {
+	color: rgb(255, 255, 255) !important;
+	background-color: rgb(147, 99, 87) !important;
 }
