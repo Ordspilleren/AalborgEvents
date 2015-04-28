@@ -16,13 +16,15 @@ include ('header.php');
 		else {
 			//sæt tilladte filtyper
 			$tilladte = array('jpg', 'jpeg', 'png', 'gif');
+			//sæt variabel med det midlertidige sted filen bliver gemt.
+			$filtemp = $_FILES['billede']['tmp_name'];
 			//Sæt variabel med navn på fil
 			$filnavn = $_FILES['billede']['name'];
 			//sæt variabel med fil extentionen i lowercase
 			$filexp = explode('.', $filnavn);
 			$filextn = strtolower(end($filexp));
-			//sæt variabel med det midlertidige sted filen bliver gemt.
-			$filtemp = $_FILES['billede']['tmp_name'];
+
+
 
 			//tjek om billedet har en tilladt extention
 			if (in_array($filextn, $tilladte)){
@@ -44,7 +46,7 @@ include ('header.php');
 					echo '<img id="preview-img" src="img/opretthumbnail.jpeg">';
 				}
 				else {
-					echo '<img id="preview-img" src="' . $thumbnail . '">';
+					echo '<img id="preview-img" src="' . $thumbnail . '.' . $filextn . '">';
 				}
 
 			?>
