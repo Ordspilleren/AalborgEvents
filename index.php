@@ -48,15 +48,16 @@
 			</div>
 			<div class="col-md-4">
 				<h2>Kategorier</h2>
-				<div class="eventkategori">
-					<img src="http://placehold.it/500x100" alt="">
-				</div>
-				<div class="eventkategori">
-					<img src="http://placehold.it/500x100" alt="">
-				</div>
-				<div class="eventkategori">
-					<img src="http://placehold.it/500x100" alt="">
-				</div>
+				<ul class="eventkategorier">
+					<li>
+						<img src="img/fest.png" alt="">
+						<h2 class="title">Musik</h2>
+					</li>
+					<li>
+						<img src="http://placehold.it/500x100" alt="">
+						<h2 class="title">Kategori</h2>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>

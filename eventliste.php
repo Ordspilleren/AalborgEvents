@@ -2,14 +2,25 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-3"></div>
+		<div class="col-md-3">
+			<ul class="eventkategorier">
+				<li>
+					<img src="img/fest.png" alt="">
+					<h2 class="title">Musik</h2>
+				</li>
+				<li>
+					<img src="http://placehold.it/500x100" alt="">
+					<h2 class="title">Kategori</h2>
+				</li>
+			</ul>
+		</div>
 		<div class="col-md-9">
 			<ul class="event-list">
 				<li>
 					<img alt="Independence Day" src="http://www.claussondberg.dk/wp-content/uploads/25-FAELS-Karneval-18.jpg" />
 					<div class="info">
 						<span class="date">24/05/2015</span>
-						<h2 class="title">Aalborg Karneval</h2>
+						<h2 class="title"><a href="eventside.php">Aalborg Karneval</a></h2>
 						<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ipsum, earum facilis dignissimos numquam reiciendis omnis sit voluptas, sint.</p>
 					</div>
 					<div class="social">

@@ -61,22 +61,44 @@ body {
 	FORSIDE
 */
 
-.eventkategori {
-	display: block;
-	overflow: hidden;
-	height: 100px;
-	width: auto;
-	border-radius: 5px;
-	margin-bottom: 1em;
+.eventkategorier {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
 }
 
-.eventkategori img {
+.eventkategorier > li {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	height: 50px;
+	width: auto;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.eventkategorier > li > img {
 	display: block;
 	min-width: 100%;
 	min-height: 100%;
+	filter: brightness(50%);
+	-webkit-filter: brightness(50%);
+	-moz-filter: brightness(50%);
 }
 
-.eventkategori:hover{
+.eventkategorier > li > .title {
+	position: absolute;
+	top: -8px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+    color:white;
+    font-size:16pt;
+    text-align: center;
+    text-shadow: 2px 2px 2px black!important;
+}
+
+.eventkategorier li:hover{
 	-webkit-transform:scale(1.1);
 	-webkit-animation-name: kategori;
 	-webkit-animation-duration: 0.2s;
