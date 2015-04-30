@@ -316,3 +316,24 @@ body {
 .featured-events {
 	background-color: #eee;
 }
+
+
+.inner-addon{
+	position: relative;
+}
+.inner-addon .glyphicon {
+	position: absolute;
+	padding: 3px;
+	left:  5px;
+}
+.inner-addon input {
+	padding-left:  30px;
+}
+
+
+
+
+
+
+
+
