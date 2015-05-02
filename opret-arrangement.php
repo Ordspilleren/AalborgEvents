@@ -15,7 +15,7 @@ include ('header.php'); ?>
 							<br>
 						</div>
 						
-						<form role="form" action="eventsubmit.php" method="post" id="form">
+						<form action="eventsubmit.php" method="post">
 							<div class="row">
 								
 								<!-- Billede upload (lav preview senere) -->
@@ -30,7 +30,7 @@ include ('header.php'); ?>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<label for="eventnavn">Navn på event:</label>
-										<input type="text" name="eventnavn" id="fornavn" class="form-control input-sm" placeholder="Indtast navnet på arrangementet" required>
+										<input type="text" name="eventnavn" id="eventnavn" class="form-control input-sm" placeholder="Indtast navnet på arrangementet" required>
 									</div>
 								</div>
 								
@@ -38,9 +38,9 @@ include ('header.php'); ?>
 								<!-- Navn på arrangør af arrangement -->
 								<div class="col-sm-6">
 									<div class="form-group">
-											<label for="efternavn">Arrangør:</label>
+											<label for="afholder">Arrangør:</label>
 										<div>
-											<input type="text" name="efternavn" id="efternavn" class="form-control input-sm" placeholder="Indtast sted" required>
+											<input type="text" name="afholder" id="afholder" class="form-control input-sm" placeholder="Indtast sted" required>
 										</div>
 									</div>
 								</div>
@@ -51,7 +51,7 @@ include ('header.php'); ?>
 											<label for="dato">Vælg en dato og starttidspunkt:</label>
 										<div class="form-inline">
 										<?php
-										//sæt dato idag til min dato brugeren kan indtaste. 
+										//sæt dato idag til minimum dato som brugeren kan indtaste. 
 										$datoidag = date('Y-m-d');
 										?>
 
@@ -80,14 +80,13 @@ include ('header.php'); ?>
 							
 											<span class="inner-addon">
 												<i class="glyphicon glyphicon-calendar"></i>
-												<input type="date" name="slutdato" id="dato2" class="form-control input-sm" min="<?php echo $datoidag; ?>" max="2020-12-31" required>
+												<input type="date" name="slutdato" id="dato2" class="form-control input-sm" min="<?php echo $datoidag; ?>" max="2020-12-31">
 											</span>
 
 											<span class="inner-addon">
 												<i class="glyphicon glyphicon-time"></i>
 												<input type="time" name="sluttid" id="tid2" class="form-control input-sm">
 											</span>
-										
 										</div>
 									</div>
 								</div>
@@ -96,7 +95,11 @@ include ('header.php'); ?>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<label for="adresse">Indtast adresse hvor arrangementet afholdes:</label>
-										<div class="">
+										
+
+
+										<div class="inner-addon">
+											<i class="glyphicon glyphicon-map-marker"></i>
 											<input type="text" name="adresse" class="form-control input-sm" placeholder="Indtast et vejnavn og nummer">
 										</div>
 									</div>
@@ -108,38 +111,41 @@ include ('header.php'); ?>
 									<div class="form-group">
 										<label for="kategori">Vælg en eller flere kategorier:</label>
 										<div class="">
-											<input type="dropdown" name="kategorier" class="form-control input-sm">
+											<select name="kategorier" id="kategori" class="form-control input-sm" multiple>
+												<option value="Aalborg">Aalborg</option>
+												<option value="Musik">Musik</option>
+											</select>
 										</div>
 									</div>
 								</div>
 
+								
+
+								<!-- beskrivelse -->
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="beskrivelse">Beskrivelse:</label>
+										<textarea name="beskrivelse" id="beskrivelse" cols="30" rows="4" class="form-control" placeholder="Tilføj en beskrivelse af arrangementet:"></textarea>
+									</div>
+								</div>
+								
+								<!-- Submit knap -->
+								<div class="col-sm-4 col-sm-offset-4">
+									<input type="submit" name="submitknap" value="Opret arrangement" class="btn btn-block">
+								</div>
 
 
 							</div>
-
-							<!--  -->
-								<div class="form-group">
-									<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Indtast din email" required>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Vælg et password" required>
-										</div>
-									</div>	
-									<div class="col-md-6">
-										<div class="form-group">
-											<input type="password" name="pw2" id="pw2" class="form-control input-sm" placeholder="Bekræft dit password" required>
-										</div>
-									</div>	
-								</div>
-							<input type="submit" value="Opret bruger" class="btn btn-block">
 						</form>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+
+	<!-- script til at vise sluddato hvis det vælges -->
 <script>
 window.onload = function() {
 $( "#sluttid" ).click(function() {

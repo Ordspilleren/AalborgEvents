@@ -5,7 +5,6 @@ include ('header.php');
 <div class="container">	    
 
 	<?php
-	//tjek om brugeren allerede har uploadet det samme billede et billede
 
 
 	//tjek om der er blevet trykket submit på billedet.
