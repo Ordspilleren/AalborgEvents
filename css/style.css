@@ -443,3 +443,24 @@ body {
 	color: rgb(255, 255, 255) !important;
 	background-color: rgb(147, 99, 87) !important;
 }
+
+
+.inner-addon{
+	position: relative;
+}
+.inner-addon .glyphicon {
+	position: absolute;
+	padding: 3px;
+	left:  5px;
+}
+.inner-addon input {
+	padding-left:  30px;
+}
+
+
+
+
+
+
+
+
