@@ -15,9 +15,10 @@ include ('header.php'); ?>
 							<br>
 						</div>
 						
-						<form action="eventsubmit.php" method="post">
+						<form action="eventsubmit.php" method="post" enctype="multipart/form-data">
 							<div class="row">
 								
+
 								<!-- Billede upload (lav preview senere) -->
 								<div class="form-group col-sm-6">
 									<div id="image-preview" style="display: block">
@@ -112,7 +113,7 @@ include ('header.php'); ?>
 										<label for="kategori">Vælg en eller flere kategorier:</label>
 										<div class="">
 											<select name="kategorier" id="kategori" class="form-control input-sm" multiple>
-												<option value="Aalborg">Aalborg</option>
+												<option value="Aalborg" selected="selected">Aalborg</option>
 												<option value="Musik">Musik</option>
 											</select>
 										</div>

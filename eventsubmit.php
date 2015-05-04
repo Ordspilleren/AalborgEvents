@@ -11,52 +11,10 @@ if(isset($_POST['submitknap'])){
 	$adresse = $_POST['adresse'];
 	$kategorier = $_POST['kategorier'];
 
+
 	// billedsti skal fikses senere
 	$billedsti = 'placeholder';
 
-	$nytevent = array('eventnavn' => $eventnavn, 'afholder' => $afholder, 'startdato' => $startdato, 'starttid' => $starttid, 'slutdato' => $slutdato, 'sluttid' => $sluttid, 'adresse' => $adresse, 'kategorier' => $kategorier, 'billedsti' => $billedsti);
-
-	print_r($nytevent);
-
-	//tjek om der er blevet trykket submit på billedet.
-	if (isset($_FILES['billede']) === true){
-		//tjek om der er blevet uploadet et tomt billede.
-		if (empty($_FILES['billede']['name']) === true){
-			echo "vælg venligst et billede";
-		}
-		elseif (isset($filnavn) && $_FILES['billede']['name'] === $filnavn) {
-			echo "Billedet er allerede uploadet";
-		}
-
-		// hvis der er blevet trykket submit og billedet ikke allerede er forsøgt uploadet
-		else {
-			//sæt tilladte filtyper
-			$tilladte = array('jpg', 'jpeg', 'png', 'gif');
-
-			//sæt variabel med det midlertidige sted filen bliver gemt.
-			$filtemp = $_FILES['billede']['tmp_name'];
-			
-			//Sæt variabel med navn på fil
-			$filnavn = $_FILES['billede']['name'];
-			
-			//sæt variabel med fil extentionen i lowercase
-			$filexp = explode('.', $filnavn);
-			$filextn = strtolower(end($filexp));
-
-
-				//tjek om billedet har en tilladt extention
-				if (in_array($filextn, $tilladte)){
-					//flyt filen midlertidigt for at lave et thumbnail.
-					$tempdst= 'img/tnevent/' . substr(md5(time()), 0, 10) . '.' . $filextn;
-					move_uploaded_file($filtemp, $tempdst);
-
-				}
-				else {
-					echo 'Den uploadede fil er en ikke tilladt. De tilladte billedtyper er: .jpg, .jpeg, .png og .gif';
-				}
-		}
-
-	}
 
 // tjek om brugeren allerede har oprettet et event med samme navn, for at undgå brugeren kan resubmitte den samme to gange, eller at der kommer to med samme navn.
 $q = "SELECT * FROM Events WHERE eventnavn = :eventnavn";
@@ -66,6 +24,57 @@ $STH->execute();
 $tjek = $STH->fetch();
 
 if (empty($tjek)){
+
+	//tjek om der er blevet trykket submit på billedet.
+	if (isset($_FILES['billede']) === true){
+		//tjek om der er blevet uploadet et tomt billede.
+		if (empty($_FILES['billede']['name']) === true){
+			echo "vælg venligst et billede";
+		}
+		//hvis billedet ikke er tomt:
+		else {
+			//sæt en variabel med tilladte filtyper
+			$tilladte = array('jpg', 'jpeg', 'png', 'gif');
+
+			//sæt variabel med det midlertidige sted filen bliver gemt.
+			$filtemp = $_FILES['billede']['tmp_name'];
+			
+			//Sæt variabel med navn på fil
+			$filnavn = $_FILES['billede']['name'];
+			
+			//sæt variabel med fil extentionen - Ved at explode filnavnet med . - Derefter sættes den sidste del (extention) til lovercase.
+			$filexp = explode('.', $filnavn);
+			$filextn = strtolower(end($filexp));
+
+
+				//tjek om billedet har en tilladt extention
+				if (in_array($filextn, $tilladte)){
+					
+					//flyt filen for at gemme den.
+					//sæt først det nye navn og sti som filen skal have (bruger md5 på tiden til at lave et random filnavn):
+					$dst = 'img/tnevent/' . substr(md5(time()), 0, 10) . '.' . $filextn;
+					
+					//flyt filen:
+					move_uploaded_file($filtemp, $dst);
+
+					//skift variablen billedsti til det uploadede billede
+					$billedsti = $dst;
+
+				}
+				//hvis filen ikke har en tilladt extention:
+				else {
+					echo 'Den uploadede fil er en ikke tilladt. De tilladte billedtyper er: .jpg, .jpeg, .png og .gif';
+				}
+		}
+
+	}
+
+
+
+$nytevent = array('eventnavn' => $eventnavn, 'afholder' => $afholder, 'startdato' => $startdato, 'starttid' => $starttid, 'slutdato' => $slutdato, 'sluttid' => $sluttid, 'adresse' => $adresse, 'kategorier' => $kategorier, 'billedsti' => $billedsti);
+print_r($nytevent);
+
+
 	//indsæt nyt event i databasen
 
 	$q = "INSERT INTO Events (eventnavn, afholder, startdato, starttid, slutdato, sluttid, adresse, kategorier, billedsti) VALUES (:eventnavn, :afholder, :startdato, :starttid, :slutdato, :sluttid, :adresse, :kategorier, :billedsti)";
@@ -76,8 +85,8 @@ if (empty($tjek)){
 
 }
 else{
-
-	header("Location: http://localhost:7888/p2/aalborgevents/opret-arrangement.php");
+	echo "Der findes allerede et event med dette navn";
+	//header("Location: http://localhost:7888/p2/aalborgevents/opret-arrangement.php");
 }
 
 
