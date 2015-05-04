@@ -7,6 +7,10 @@ if (isset($_SESSION['fejl'])){
 }
 ?>
 	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="index.php">AalborgEvents</a></li>
+			<li class="active">Log ind</li>
+		</ol>
 		<div class="row min-form">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-default">

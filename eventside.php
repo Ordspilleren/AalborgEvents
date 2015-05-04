@@ -1,6 +1,17 @@
-<?php include('header.php'); ?>
+<?php
+include('header.php'); 
+
+if(!isset($_GET['event'])) {
+	echo "Der skal indtastes et eventid min ven";
+}
+?>
 
 <div class="container">
+	<ol class="breadcrumb">
+		<li><a href="index.php">AalborgEvents</a></li>
+		<li><a href="eventliste.php">Arrangementer</a></li>
+		<li class="active">%EVENTNAVN%</li>
+	</ol>
 	<div class="row">
 		<div class="col-md-4">
 			<div class="event-info">

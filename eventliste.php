@@ -1,6 +1,10 @@
 <?php include('header.php'); ?>
 
 <div class="container">
+	<ol class="breadcrumb">
+		<li><a href="index.php">AalborgEvents</a></li>
+		<li class="active">Arrangementer</li>
+	</ol>
 	<div class="row">
 		<div class="col-md-3">
 			<ul class="eventkategorier">
