@@ -1,6 +1,7 @@
 <?php
 session_start();
-include('header.php'); ?>
+include('header.php');
+require_once('database.php');
 
 if(isset($_GET['kategori'])) {
 	$kategori = $_GET['kategori'];
@@ -12,67 +13,68 @@ if(isset($_GET['kategori'])) {
 <div class="container">
 	<ol class="breadcrumb">
 		<li><a href="index.php">AalborgEvents</a></li>
-		<li class="active">Arrangementer</li>
+		<li>Arrangementer</li>
+		<li class="active"><?=$kategori?></li>
 	</ol>
 	<div class="row">
 		<div class="col-md-3">
 			<ul class="eventkategorier">
 				<li>
-					<a href="#">
+					<a href="?kategori=Sport">
 						<img src="http://placehold.it/500x100" alt="">
 						<h2 class="title">Sport & Motion</h2>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="?kategori=Musik">
 						<img src="http://placehold.it/500x100" alt="">
 						<h2 class="title">Musik</h2>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="?kategori=Hygge">
 						<img src="http://placehold.it/500x100" alt="">
 						<h2 class="title">Hygge</h2>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="?kategori=Kunst">
 						<img src="http://placehold.it/500x100" alt="">
 						<h2 class="title">Kunst & Kultur</h2>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="?kategori=Mad">
 						<img src="http://placehold.it/500x100" alt="">
 						<h2 class="title">Mad & Drikke</h2>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="?kategori=Natur">
 						<img src="http://placehold.it/500x100" alt="">
 						<h2 class="title">Natur</h2>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="?kategori=Fest">
 						<img src="img/fest.png" alt="">
 						<h2 class="title">Fest</h2>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="?kategori=Foredrag">
 						<img src="http://placehold.it/500x100" alt="">
 						<h2 class="title">Foredrag</h2>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="?kategori=Familien">
 						<img src="http://placehold.it/500x100" alt="">
 						<h2 class="title">For hele familien</h2>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="?kategori=Diverse">
 						<img src="http://placehold.it/500x100" alt="">
 						<h2 class="title">Diverse</h2>
 					</a>
@@ -90,9 +92,9 @@ if(isset($_GET['kategori'])) {
 				<li>
 					<img alt="Independence Day" src="http://www.claussondberg.dk/wp-content/uploads/25-FAELS-Karneval-18.jpg" />
 					<div class="info">
-						<span class="date">24/05/2015</span>
-						<h2 class="title"><a href="eventside.php"><?=$event['eventnavn'];?></a></h2>
-						<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ipsum, earum facilis dignissimos numquam reiciendis omnis sit voluptas, sint.</p>
+						<span class="date"><?=date("d/m/Y", strtotime($event['startdato']));?></span>
+						<h2 class="title"><a href="eventside.php?event=<?=$event['ID'];?>"><?=$event['eventnavn'];?></a></h2>
+						<p class="desc"><?=$event['beskrivelse'];?></p>
 					</div>
 					<div class="social">
 						<ul>

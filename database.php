@@ -10,7 +10,7 @@ $username = 'aalborgevents';
 $password = 'kaffe123';
 
 try {
-	$DBH = new PDO("mysql:host=$hostname;dbname=aalborgevents", $username, $password);
+	$DBH = new PDO("mysql:host=$hostname;dbname=aalborgevents;charset=utf8", $username, $password);
 	$DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch(PDOException $e)
