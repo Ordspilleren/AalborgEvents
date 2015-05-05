@@ -18,12 +18,64 @@ if(isset($_GET['kategori'])) {
 		<div class="col-md-3">
 			<ul class="eventkategorier">
 				<li>
-					<img src="img/fest.png" alt="">
-					<h2 class="title">Musik</h2>
+					<a href="#">
+						<img src="http://placehold.it/500x100" alt="">
+						<h2 class="title">Sport & Motion</h2>
+					</a>
 				</li>
 				<li>
-					<img src="http://placehold.it/500x100" alt="">
-					<h2 class="title">Kategori</h2>
+					<a href="#">
+						<img src="http://placehold.it/500x100" alt="">
+						<h2 class="title">Musik</h2>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="http://placehold.it/500x100" alt="">
+						<h2 class="title">Hygge</h2>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="http://placehold.it/500x100" alt="">
+						<h2 class="title">Kunst & Kultur</h2>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="http://placehold.it/500x100" alt="">
+						<h2 class="title">Mad & Drikke</h2>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="http://placehold.it/500x100" alt="">
+						<h2 class="title">Natur</h2>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/fest.png" alt="">
+						<h2 class="title">Fest</h2>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="http://placehold.it/500x100" alt="">
+						<h2 class="title">Foredrag</h2>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="http://placehold.it/500x100" alt="">
+						<h2 class="title">For hele familien</h2>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="http://placehold.it/500x100" alt="">
+						<h2 class="title">Diverse</h2>
+					</a>
 				</li>
 			</ul>
 		</div>
