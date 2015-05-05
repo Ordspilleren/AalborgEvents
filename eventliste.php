@@ -1,6 +1,6 @@
 <?php
-include('header.php');
-require_once('database.php');
+session_start();
+include('header.php'); ?>
 
 if(isset($_GET['kategori'])) {
 	$kategori = $_GET['kategori'];

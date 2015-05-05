@@ -1,6 +1,12 @@
 <?php
-session_start();
 require_once('functions.php');
+function echoActiveClassIfRequestMatches($requestUri)
+{
+  $current_file_name = basename($_SERVER['REQUEST_URI']);
+
+  if ($current_file_name == $requestUri)
+    echo 'class="active"';
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,10 +33,24 @@ require_once('functions.php');
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.php">Forside</a></li>
-					<li><a href="eventliste.php">Arrangementer</a></li>
-					<li><a href="login.php"><?=(loggedIn() == true) ? "Log ud" : "Log ind"?></a></li>
-					<li><a href="opretform.php"><?=(loggedIn() == true) ? "Min side" : "Opret bruger"?></a></li>
+					<li <?=echoActiveClassIfRequestMatches("index.php")?>> 
+						<a href="index.php">Forside</a>
+					</li>
+					<li <?=echoActiveClassIfRequestMatches("eventliste.php")?>> 
+						<a href="eventliste.php">Arrangementer</a>
+					</li>
+					<li <?=echoActiveClassIfRequestMatches("loginform.php")?>> 
+						<a href="login.php"><?=(loggedIn() == true) ? "Log ud" : "Log ind"?></a>
+					</li>
+					<li <?=echoActiveClassIfRequestMatches("opretform.php")?> <?=echoActiveClassIfRequestMatches("minside.php")?>>
+						<a href="opretform.php"><?=(loggedIn() == true) ? "Min side" : "Opret bruger"?></a>
+					</li>
+					<?php if(loggedIn() == true){  ?>
+						
+						<li
+						<?=echoActiveClassIfRequestMatches("opret-arrangement.php")?>
+						> <a href="opret-arrangement.php">Opret arrangement</a></li>
+					<? } ?>
 				</ul>
 				<form class="navbar-form navbar-right">
 					<input type="text" placeholder="Søg" class="form-control">

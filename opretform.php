@@ -1,4 +1,11 @@
 <?php
+session_start();
+require_once('functions.php');
+
+if (loggedIn() == true) {
+	header('Location: ./minside.php');
+}
+
 include('header.php');
 
 if (isset($_SESSION['fejl'])){
@@ -41,7 +48,7 @@ if (isset($_SESSION['fejl'])){
 										<div class="form-group">
 											<input type="password" name="pw2" id="pw2" class="form-control input-sm" placeholder="Bekræft dit password" required>
 										</div>
-									</div>	
+									</div>
 								</div>
 							<input type="submit" value="Opret bruger" class="btn btn-block">
 						</form>
@@ -55,7 +62,7 @@ if (isset($_SESSION['fejl'])){
 	$("#form").submit(function(){
     if($("#password").val()!=$("#pw2").val())
      	{
-       	  	alert("password should be same");
+       	  	alert("password skal være det samme");
         	return false;
      	}
  		})

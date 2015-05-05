@@ -1,5 +1,11 @@
 <?php
 session_start();
+require_once('functions.php');
+
+if (loggedIn() == false) {
+	header('Location: ./loginform.php');
+}
+
 include ('header.php'); ?>
 
 <div class="container">
@@ -110,11 +116,19 @@ include ('header.php'); ?>
 								<!-- Kategorier (udskift evt. med keywordS?? lave et eller andet her.) -->
 								<div class="col-sm-6">
 									<div class="form-group">
-										<label for="kategori">Vælg en eller flere kategorier:</label>
+										<label for="kategori">Vælg en kategori:</label>
 										<div class="">
-											<select name="kategorier" id="kategori" class="form-control input-sm" multiple>
-												<option value="Aalborg" selected="selected">Aalborg</option>
+											<select name="kategorier" id="kategori" class="form-control input-sm" required>
+												<option value="Diverse">Diverse</option>
+												<option value="Familien">For hele famielien</option>
+												<option value="Fest">Fest</option>
+												<option value="Foredrag">Foredrag</option>
+												<option value="Hygge">Hygge</option>
+												<option value="Kunst">Kunst & kultur</option>
+												<option value="Mad">Mad & Drikke</option>
 												<option value="Musik">Musik</option>
+												<option value="Natur">Natur</option>
+												<option value="Sport">Sport & motion</option>
 											</select>
 										</div>
 									</div>
