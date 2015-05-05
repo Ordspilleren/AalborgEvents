@@ -1,4 +1,11 @@
 <?php
+session_start();
+require_once('functions.php');
+
+if (loggedIn() == false) {
+	header('Location: ./loginform.php');
+}
+
 include ('header.php'); ?>
 
 <div class="container">

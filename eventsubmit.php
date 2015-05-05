@@ -52,13 +52,14 @@ if (empty($tjek)){
 					
 					//flyt filen for at gemme den.
 					//sæt først det nye navn og sti som filen skal have (bruger md5 på tiden til at lave et random filnavn):
-					$dst = 'img/tnevent/' . substr(md5(time()), 0, 10) . '.' . $filextn;
+					$dstdb = substr(md5(time()), 0, 10) . '.' . $filextn;
+					$dst = 'img/tnevent/' . $dstdb;
 					
 					//flyt filen:
 					move_uploaded_file($filtemp, $dst);
 
 					//skift variablen billedsti til det uploadede billede
-					$billedsti = $dst;
+					$billedsti = $dstdb;
 
 				}
 				//hvis filen ikke har en tilladt extention:

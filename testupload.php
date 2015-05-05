@@ -5,8 +5,6 @@ include ('header.php');
 <div class="container">	    
 
 	<?php
-
-
 	//tjek om der er blevet trykket submit på billedet.
 	if (isset($_FILES['billede']) === true){
 		//tjek om der er blevet uploadet et tomt billede.
