@@ -8,6 +8,7 @@ function loggedIn(){
 }
 
 function getEvent($id){
+	global $DBH;
 	$q = "SELECT * FROM Events WHERE id = :id";
 	$STH = $DBH->prepare($q);
 	$STH->bindParam(':id', $id);
@@ -17,6 +18,13 @@ function getEvent($id){
 	return $result;
 }
 
-function getUser(){
+function getUser($email){
+	global $DBH;
+	$q = "SELECT * FROM Brugere WHERE email = :email";
+	$STH = $DBH->prepare($q);
+	$STH->bindParam(':email', $email);
+	$STH->execute();
+	$result = $STH->fetch(PDO::FETCH_ASSOC);
 
+	return $result;
 }
