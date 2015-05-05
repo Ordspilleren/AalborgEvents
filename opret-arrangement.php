@@ -73,7 +73,7 @@ include ('header.php'); ?>
 											<input type="time" name="starttid" id="starttid" class="form-control input-sm">
 										</span>
 
-											<button class="btn btn-info btn-xs" id="sluttid">Tilføj sluttidspunkt</button>
+											<span class="btn btn-info btn-xs" id="sluttid">Tilføj sluttidspunkt</span>
 										</div>
 									</div>
 								</div>
