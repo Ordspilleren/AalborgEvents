@@ -10,6 +10,8 @@ if(isset($_POST['submitknap'])){
 	$sluttid = $_POST['sluttid'];
 	$adresse = $_POST['adresse'];
 	$kategorier = $_POST['kategorier'];
+	$beskrivelse = $_POST['beskrivelse'];
+	$bruger = $_SESSION['email'];
 
 
 	// billedsti skal fikses senere
@@ -72,13 +74,13 @@ if (empty($tjek)){
 
 
 
-$nytevent = array('eventnavn' => $eventnavn, 'afholder' => $afholder, 'startdato' => $startdato, 'starttid' => $starttid, 'slutdato' => $slutdato, 'sluttid' => $sluttid, 'adresse' => $adresse, 'kategorier' => $kategorier, 'billedsti' => $billedsti);
+$nytevent = array('eventnavn' => $eventnavn, 'afholder' => $afholder, 'startdato' => $startdato, 'starttid' => $starttid, 'slutdato' => $slutdato, 'sluttid' => $sluttid, 'adresse' => $adresse, 'kategorier' => $kategorier, 'billedsti' => $billedsti, 'beskrivelse' => $beskrivelse, 'bruger' => $bruger);
 print_r($nytevent);
 
 
 	//indsæt nyt event i databasen
 
-	$q = "INSERT INTO Events (eventnavn, afholder, startdato, starttid, slutdato, sluttid, adresse, kategorier, billedsti) VALUES (:eventnavn, :afholder, :startdato, :starttid, :slutdato, :sluttid, :adresse, :kategorier, :billedsti)";
+	$q = "INSERT INTO Events (eventnavn, afholder, startdato, starttid, slutdato, sluttid, adresse, kategorier, billedsti, beskrivelse, bruger) VALUES (:eventnavn, :afholder, :startdato, :starttid, :slutdato, :sluttid, :adresse, :kategorier, :billedsti, :beskrivelse, :bruger)";
 	$STH = $DBH->prepare($q);
 	$STH->execute($nytevent);
 
