@@ -2,12 +2,11 @@
 session_start();
 require_once('functions.php');
 
-if (loggedIn() == false) {
-	header('Location: ./loginform.php');
-}
 
-include ('header.php'); ?>
 
+include ('header.php'); 
+if (loggedIn() == true) {
+?>
 <div class="container">
 		<div class="row min-form">
 			<div class="col-sm-12">
@@ -102,12 +101,10 @@ include ('header.php'); ?>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<label for="adresse">Indtast adresse hvor arrangementet afholdes:</label>
-										
-
 
 										<div class="inner-addon">
 											<i class="glyphicon glyphicon-map-marker"></i>
-											<input type="text" name="adresse" class="form-control input-sm" placeholder="Indtast et vejnavn og nummer">
+											<input type="text" name="adresse" class="form-control input-sm" placeholder="Indtast et vejnavn og nummer" required>
 										</div>
 									</div>
 								</div>
@@ -149,7 +146,6 @@ include ('header.php'); ?>
 									<input type="submit" name="submitknap" value="Opret arrangement" class="btn btn-block">
 								</div>
 
-
 							</div>
 						</form>
 
@@ -158,6 +154,17 @@ include ('header.php'); ?>
 			</div>
 		</div>
 	</div>
+<?php
+}
+else {
+?>
+<div class="container">
+Du skal være <a href="./loginform.php">logget ind</a> for at oprette et arrangement.
+</div>
+<?php
+}
+?>
+
 
 
 	<!-- script til at vise sluddato hvis det vælges -->

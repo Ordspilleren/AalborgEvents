@@ -45,12 +45,10 @@ function echoActiveClassIfRequestMatches($requestUri)
 					<li <?=echoActiveClassIfRequestMatches("opretform.php")?> <?=echoActiveClassIfRequestMatches("minside.php")?>>
 						<a href="opretform.php"><?=(loggedIn() == true) ? "Min side" : "Opret bruger"?></a>
 					</li>
-					<?php if(loggedIn() == true){  ?>
-						
-						<li
-						<?=echoActiveClassIfRequestMatches("opret-arrangement.php")?>
-						> <a href="opret-arrangement.php">Opret arrangement</a></li>
-					<? } ?>
+					<li	<?=echoActiveClassIfRequestMatches("opret-arrangement.php")?>> 
+						<a href="opret-arrangement.php">Opret arrangement</a>
+					</li>
+					
 				</ul>
 				<form class="navbar-form navbar-right">
 					<input type="text" placeholder="Søg" class="form-control">
