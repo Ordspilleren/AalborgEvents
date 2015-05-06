@@ -68,7 +68,7 @@ if (isset($_GET['addevent'])) {
 				<!-- Google maps API, (bruger urlencode på den indtastede addresse fra databasen) -->
 				<iframe width="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAPR6aYdpgiTTUkNn0qIS8vG0mTUBkDszs&q=<?=urlencode($event['adresse'])?>"></iframe>
 				<button type="button" class="btn btn-info btn-block" disabled="disabled">Køb billet</button>
-				<a href="?event=<?=$eventid;?>&addevent" class="btn btn-success btn-block">Tilføj til min side</a>
+				<a href="?event=<?=$eventid;?>&addevent" class="btn btn-success btn-block" <?=(loggedIn() == true) ? "" : "disabled='disabled'"?>>Tilføj til min side</a>
 			</div>
 		</div>
 

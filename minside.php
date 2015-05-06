@@ -1,4 +1,6 @@
-<? include('header.php'); ?>
+<?php
+include('header.php'); 
+?>
 
 <div class="container">
     <div class="row">
@@ -25,7 +27,7 @@
 					<img alt="Independence Day" src="http://i2-images1.tv2net.dk/s/21/20166321-b09a8711b8fc517b1c8b2401bc638335.jpeg" />
 					<div class="info">
 						<span class="date">27/05/2015</span>
-						<h2 class="title">Grill v/ Østre Anlæg</h2>
+						<h2 class="title">Grill v/ Ã˜stre AnlÃ¦g</h2>
 						<p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ipsum, earum facilis dignissimos numquam reiciendis omnis sit voluptas, sint.</p>
 					</div>
 					<div class="social">
@@ -78,7 +80,7 @@
 	</div>
 	<div class="row">			
 		<div class="col-md-12">
-			<h2>Arrangører du følger:</h2>
+			<h2>ArrangÃ¸rer du fÃ¸lger:</h2>
 			<p>Lorem ipsum dolar sit amet</p>
 			<ul class="followers">
 				<li>
@@ -100,4 +102,4 @@
 		</div>	
 	</div>
 </div>
-<? include('footer.php'); ?>
+<?php include('footer.php'); ?>

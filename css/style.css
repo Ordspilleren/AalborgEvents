@@ -143,15 +143,6 @@ body {
 	margin: 0px 0px 20px;
 }
 
-.event-list > li:hover {
-	-webkit-transform:scale(1.05);
-	-webkit-animation-name: kategori;
-	-webkit-animation-duration: 0.2s;
-	transform:scale(1.05);
-	animation-name: kategori;
-	animation-duration: 0.2s;
-}
-
 .event-list > li > .info > .date {
 	float: right;
 	margin-right: 1em;
