@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('database.php');
+//sæt variabler fra brugerens indtastede data
 if(isset($_POST['submitknap'])){
 	$eventnavn = $_POST['eventnavn'];
 	$afholder = $_POST['afholder'];
@@ -15,7 +16,7 @@ if(isset($_POST['submitknap'])){
 
 
 	// billedsti skal fikses senere
-	$billedsti = 'placeholder';
+	$billedsti = 'kappa.jpg';
 
 
 // tjek om brugeren allerede har oprettet et event med samme navn, for at undgå brugeren kan resubmitte den samme to gange, eller at der kommer to med samme navn.

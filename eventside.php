@@ -10,7 +10,7 @@ else{
 	$eventid = $_GET['event'];
 	echo $eventid;
 	$event = getEvent($eventid);
-	//print_r($event);
+	//print_r($event);	
 }
 
 if (isset($_GET['addevent'])) {
@@ -63,13 +63,10 @@ if (isset($_GET['addevent'])) {
 				<?php
 				}
 				?>
-
-
-
 				
 				
-
-				<iframe width="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Studenterhuset%2C%20Gammeltorv%2C%20Aalborg%2C%20Danmark&key=AIzaSyAPR6aYdpgiTTUkNn0qIS8vG0mTUBkDszs"></iframe>
+				<!-- Google maps API, (bruger urlencode på den indtastede addresse fra databasen) -->
+				<iframe width="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAPR6aYdpgiTTUkNn0qIS8vG0mTUBkDszs&q=<?=urlencode($event['adresse'])?>"></iframe>
 				<button type="button" class="btn btn-info btn-block" disabled="disabled">Køb billet</button>
 				<a href="?event=<?=$eventid;?>&addevent" class="btn btn-success btn-block">Tilføj til min side</a>
 			</div>
