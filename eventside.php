@@ -12,6 +12,10 @@ else{
 	$event = getEvent($eventid);
 	//print_r($event);
 }
+
+if (isset($_GET['addevent'])) {
+	addFavorite($_SESSION['brugerid'], $eventid);
+}
 ?>
 
 <div class="container">
@@ -67,6 +71,7 @@ else{
 
 				<iframe width="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Studenterhuset%2C%20Gammeltorv%2C%20Aalborg%2C%20Danmark&key=AIzaSyAPR6aYdpgiTTUkNn0qIS8vG0mTUBkDszs"></iframe>
 				<button type="button" class="btn btn-info btn-block" disabled="disabled">Køb billet</button>
+				<a href="?event=<?=$eventid;?>&addevent" class="btn btn-success btn-block">Tilføj til min side</a>
 			</div>
 		</div>
 

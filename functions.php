@@ -28,3 +28,11 @@ function getUser($email){
 
 	return $result;
 }
+
+function addFavorite($brugerid, $eventid){
+	global $DBH;
+	$addevent = array('brugerid' => $brugerid, 'eventid' => $eventid);
+	$q = "INSERT INTO brugerfavoritter (brugerid, eventid) VALUES (:brugerid, :eventid)";
+	$STH = $DBH->prepare($q);
+	$STH->execute($addevent);
+}

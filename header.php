@@ -50,7 +50,7 @@ function echoActiveClassIfRequestMatches($requestUri)
 						<li
 						<?=echoActiveClassIfRequestMatches("opret-arrangement.php")?>
 						> <a href="opret-arrangement.php">Opret arrangement</a></li>
-					<? } ?>
+					<?php } ?>
 				</ul>
 				<form class="navbar-form navbar-right">
 					<input type="text" placeholder="Søg" class="form-control">
