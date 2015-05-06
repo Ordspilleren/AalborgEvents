@@ -112,7 +112,7 @@ body {
 		-webkit-transform:scale(1.0);	
 	}
 	to {
-		-webkit-transform:scale(1.1);
+		-webkit-transform:scale(1.05);
 	}
 }
 
@@ -121,7 +121,7 @@ body {
 		transform:scale(1.0);	
 	}
 	to {
-		transform:scale(1.1);
+		transform:scale(1.05);
 	}
 }
 
@@ -141,6 +141,15 @@ body {
 	box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
 	padding: 0px;
 	margin: 0px 0px 20px;
+}
+
+.event-list > li:hover {
+	-webkit-transform:scale(1.05);
+	-webkit-animation-name: kategori;
+	-webkit-animation-duration: 0.2s;
+	transform:scale(1.05);
+	animation-name: kategori;
+	animation-duration: 0.2s;
 }
 
 .event-list > li > .info > .date {
@@ -306,6 +315,450 @@ body {
 	}
 }
 
+
+
+/*
+	PROFIL INFO
+*/
+
+.profile {
+	padding: 5px;
+	margin-bottom: 10px;
+	color: inherit;
+	background-color: #eee;
+	height: 240px;
+	box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+}
+
+.profile > img {
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+	margin: 15px;
+	float: left;
+	border: solid 5px white;
+}
+
+.profile > .title {
+	font-size: 17pt;
+	font-weight: 400;
+}
+
+.profile > .info {
+	overflow: hidden;
+	position: relative;
+	text-align: left;
+}
+
+.profile > .edit {
+	float: right;
+	margin: 15px;
+}
+
+.profile > .stats {
+	
+}
+
+/* 
+	POPULÆRE EVENTSIDE
+*/
+
+.popular-events {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.popular-events > li {
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 0px 5px rgb(51, 51, 51);
+	padding: 0px;
+	margin: 0px 0px 20px;
+}
+	
+.popular-events > li > .info > .link {
+	display: block;
+	float: right;
+	padding: 10px;
+	background-color: rgb(92,184,92);
+	color: #ffffff;
+}
+
+.popular-events > li > img {
+	width: 100%;
+}
+
+.popular-events > li > .info > .title {
+	font-size: 17pt;
+	font-weight: 400;
+	margin: 0px;
+}
+
+@media (min-width: 768px) {
+	.popular-events > li {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 40px;
+		padding: 0px;
+	}
+
+	.popular-events > li > img  {
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		padding: 0px;
+		margin: 0px;
+		float: left;
+	}
+
+	.popular-events> li > .info {
+		background-color: rgb(245, 245, 245);
+		overflow: hidden;
+		position: relative;
+		height: 40px;
+		text-align: left;
+	}	
+
+	.popular-events > li > .info > .title, 
+	.popular-events > li > .info > .desc {
+		padding: 7px;
+	}
+
+	.popular-events > li > .info > ul {
+		position: absolute;
+		left: 0px;
+		bottom: 0px;
+	}
+	
+}
+
+/*
+	MIN SIDE
+*/
+
+.my-page {
+	font-size: 60pt
+}
+	
+.my-events {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.my-events > li {
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 0px 5px rgb(51, 51, 51);
+	box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+	padding: 0px;
+	margin: 0px 0px 20px;
+}
+
+.my-events > li:hover {
+	-webkit-transform:scale(1.05);
+	-webkit-animation-name: kategori;
+	-webkit-animation-duration: 0.2s;
+	transform:scale(1.05);
+	animation-name: kategori;
+	animation-duration: 0.2s;
+}
+
+.my-events > li > .info > .date {
+	float: right;
+	margin-right: 1em;
+}
+
+.my-events > li > img {
+	width: 100%;
+}
+
+.my-events > li > .info {
+	padding-top: 5px;
+	text-align: center;
+}
+
+.my-events > li > .info > .title {
+	font-size: 17pt;
+	font-weight: 400;
+	margin: 0px;
+}
+
+.my-events > li > .info > .desc {
+	font-size: 12pt;
+	margin: 0px;
+}
+
+.my-events > li > .info > ul,
+.my-events > li > .social > ul {
+	display: table;
+	list-style: none;
+	margin: 10px 0px 0px;
+	padding: 0px;
+	width: 100%;
+	text-align: center;
+}
+
+.my-events > li > .social > ul {
+	margin: 0px;
+}
+
+.my-events > li > .info > ul > li,
+.my-events > li > .social > ul > li {
+	display: table-cell;
+	cursor: pointer;
+	color: rgb(30, 30, 30);
+	font-size: 11pt;
+	font-weight: 300;
+	padding: 3px 0px;
+}
+
+.my-events > li > .info > ul > li > a {
+	display: block;
+	width: 100%;
+	color: rgb(30, 30, 30);
+	text-decoration: none;
+} 
+
+.my-events > li > .social > ul > li {    
+	padding: 0px;
+}
+
+.my-events > li > .social > ul > li > a {
+	padding: 3px 0px;
+} 
+
+.my-events > li > .info > ul > li:hover,
+.my-events > li > .social > ul > li:hover {
+	color: rgb(30, 30, 30);
+	background-color: rgb(200, 200, 200);
+}
+
+@media (min-width: 768px) {
+	.my-events > li {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 120px;
+		padding: 0px;
+	}
+
+	.my-events > li > img  {
+		display: inline-block;
+	}
+
+	.my-events > li > img {
+		width: 120px;
+		float: left;
+	}
+
+	.my-events > li > .info {
+		background-color: rgb(245, 245, 245);
+		overflow: hidden;
+	}
+
+	.my-events > li > img {
+		width: 120px;
+		height: 120px;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	.my-events > li > .info {
+		position: relative;
+		height: 120px;
+		text-align: left;
+		padding-right: 40px;
+	}	
+
+	.my-events > li > .info > .title, 
+	.my-events > li > .info > .desc {
+		padding: 0px 10px;
+	}
+
+	.my-events > li > .info > ul {
+		position: absolute;
+		left: 0px;
+		bottom: 0px;
+	}
+
+	.my-events > li > .social {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		display: block;
+		width: 40px;
+	}
+
+	.my-events > li > .social > ul {
+		border-left: 1px solid rgb(230, 230, 230);
+	}
+
+	.my-events > li > .social > ul > li {			
+		display: block;
+		padding: 0px;
+	}
+	
+	.my-events > li > .social > ul > li > a {
+		display: block;
+		width: 40px;
+		padding: 10px 0px 9px;
+	}
+}
+
+	
+.followers {
+	list-style: none;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+.followers > li {
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 0px 5px rgb(51, 51, 51);
+	box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+	padding: 0px;
+	margin: 0px 0px 20px;
+}
+
+.followers > li > .info > .date {
+	float: right;
+	margin-right: 1em;
+}
+
+.followers > li > img {
+	width: 100%;
+}
+
+.followers > li > .info {
+	padding-top: 5px;
+	text-align: center;
+}
+
+.followers > li > .info > .title {
+	font-size: 30pt;
+	font-weight: 400;
+	margin: 0px;
+}
+
+.followers > li > .info > .desc {
+	font-size: 12pt;
+	margin: 0px;
+}
+
+.followers > li > .info > ul,
+.followers > li > .social > ul {
+	display: table;
+	list-style: none;
+	margin: 10px 0px 0px;
+	padding: 0px;
+	width: 100%;
+	text-align: center;
+}
+
+.followers > li > .social > ul {
+	margin: 0px;
+}
+
+.followers > li > .info > ul > li,
+.followers > li > .social > ul > li {
+	display: table-cell;
+	cursor: pointer;
+	color: rgb(30, 30, 30);
+	font-size: 11pt;
+	font-weight: 300;
+	padding: 3px 0px;
+}
+
+.followers > li > .info > ul > li > a {
+	display: block;
+	width: 100%;
+	color: rgb(30, 30, 30);
+	text-decoration: none;
+} 
+
+.followers > li > .social > ul > li {    
+	padding: 0px;
+}
+
+.followers > li > .social > ul > li > a {
+	padding: 3px 0px;
+} 
+
+.followers > li > .info > ul > li:hover,
+.followers > li > .social > ul > li:hover {
+	color: rgb(30, 30, 30);
+	background-color: rgb(200, 200, 200);
+}
+
+@media (min-width: 768px) {
+	.followers > li {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 200px;
+		padding: 0px;
+	}
+
+	.followers > li > img {
+		
+		display: inline-block;
+		width: 200px;
+		height: 200px;
+		float: left;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	.followers > li > .info {
+		background-color: rgb(245, 245, 245);
+		overflow: hidden;
+	}
+
+	
+
+	.followers > li > .info {
+		position: relative;
+		height: 200px;
+		text-align: left;
+		padding-right: 100px;
+	}	
+
+	.followers > li > .info > .title, 
+	.followers > li > .info > .desc {
+		padding: 0px 10px;
+	}
+
+	.followers > li > .info > ul {
+		position: absolute;
+		left: 0px;
+		bottom: 0px;
+	}
+
+	.followers > li > .social {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		display: block;
+		width: 100px;
+	}
+
+	.followers > li > .social > ul {
+		border-left: 1px solid rgb(230, 230, 230);
+	}
+
+	.followers > li > .social > ul > li {			
+		display: block;
+		height: 67px;
+	}
+	
+	.followers > li > .social > ul > li > a {
+		display: block;
+		width: 100px;
+		padding: 13px 0px 10px;
+	}
+}	
+	
 /*
 	EVENTSIDE
 */
