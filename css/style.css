@@ -402,6 +402,9 @@ body {
 	color: rgb(30, 30, 30);
 	background-color: rgb(200, 200, 200);
 }
+.event-info > p > strong {
+	font-weight: bold;
+}
 
 .facebook a,
 .twitter a,
