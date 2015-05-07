@@ -7,7 +7,13 @@ include('header.php'); ?>
 			<div class="col-md-12">
 				<div class="jumbotron">
 					<h1>Om siden</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem voluptate numquam laborum, id sint nobis. Laborum nisi labore sapiente corporis quos eligendi minima, a officiis eveniet inventore, expedita, similique necessitatibus!</p>
+					<p>Denne side giver dig et overblik over arrangementer i Aalborg, du kan bl.a.:</p>
+					<ul>
+						<li>Se hvilke arrangementer der bliver afholdt.</li>
+						<li>Oprette dit eget arrangement.</li>
+						<li>Samle dine foretrukne arrangementer.</li>
+						<li>Følge din favorit arrangør.</li>
+					</ul>
 				</div>
 			</div>
 		</div>

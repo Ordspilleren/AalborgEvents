@@ -28,6 +28,7 @@ if (isset($_POST['email']) and isset($_POST['password'])){
 	if ("$r[password]" == $pw){
 		$_SESSION['loggedin']="true";
 		$_SESSION['email']=$email;
+		$_SESSION['brugerid']=$r['ID'];
 		header("Location: ./index.php");
 	} else {
 		$_SESSION['fejl'] = "1";
