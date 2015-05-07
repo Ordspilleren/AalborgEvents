@@ -8,7 +8,6 @@ if(!isset($_GET['event'])) {
 }
 else{
 	$eventid = $_GET['event'];
-	echo $eventid;
 	$event = getEvent($eventid);
 	//print_r($event);	
 }
