@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('header.php');
 require_once('database.php');
+include('header.php');
 
 if(isset($_GET['kategori'])) {
 	$kategori = $_GET['kategori'];
@@ -94,7 +94,7 @@ if(isset($_GET['kategori'])) {
 					<div class="info">
 						<span class="date"><?=date("d/m/Y", strtotime($event['startdato']));?></span>
 						<h2 class="title"><a href="eventside.php?event=<?=$event['ID'];?>"><?=$event['eventnavn'];?></a></h2>
-						<p class="desc"><?=$event['beskrivelse'];?></p>
+						<p class="desc"><?=truncate($event['beskrivelse']);?></p>
 					</div>
 					<div class="social">
 						<ul>

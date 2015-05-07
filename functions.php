@@ -36,3 +36,24 @@ function addFavorite($brugerid, $eventid){
 	$STH = $DBH->prepare($q);
 	$STH->execute($addevent);
 }
+
+function getBrugerEvents($brugerid){
+	global $DBH;
+	$q = "SELECT * from Events inner join brugerfavoritter on brugerfavoritter.eventid=Events.ID WHERE brugerfavoritter.brugerid='$brugerid'";
+	$events = $DBH->query($q);
+	$events->execute();
+
+	return $events;
+}
+
+function truncate($string,$length=150,$append="&hellip;") {
+  $string = trim($string);
+
+  if(strlen($string) > $length) {
+    $string = wordwrap($string, $length);
+    $string = explode("\n", $string, 2);
+    $string = $string[0] . $append;
+  }
+
+  return $string;
+}
