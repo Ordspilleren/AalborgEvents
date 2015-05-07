@@ -8,16 +8,14 @@ if(!isset($_GET['event'])) {
 }
 else{
 	$eventid = $_GET['event'];
-	echo $eventid;
 	$event = getEvent($eventid);
 	//print_r($event);	
-}
+	$bruger = getUser($event['bruger']);
 
 if (isset($_GET['addevent'])) {
 	addFavorite($_SESSION['brugerid'], $eventid);
 }
 ?>
-
 <div class="container">
 	<ol class="breadcrumb">
 		<li><a href="index.php">AalborgEvents</a></li>
@@ -36,14 +34,34 @@ if (isset($_GET['addevent'])) {
 					</ul>
 				</div>
 				<img src="img/tnevent/<?=$event['billedsti']?>" class="img-responsive" alt="">
-				<p><b>Afholder</b><br>
-					<?=$event['afholder']?>
+				
+				<?php
+				//hvis det ikke er organisationsbruger
+				if ($bruger['brugerstatus'] = 0){
+					?>
+				<p><strong>Afholder</strong><br>
+					<?=$event['afholder'];?>
 				</p>
+				<p><strong>Oprettet af:</strong><br>
+					<?=$bruger['fornavn'] . " " . $bruger['efternavn'];?>
+				<?php
+				}
+				else{
+					//hvis det er organisationsbruger
+				?>
+				<p><strong>Afholder</strong><br>
+					<a href="./profil.php?org=<?=$bruger['ID']?>">
+					<?=$bruger['navn'];?></a>
+				</p>
+				<?php
+				}
+				?>
 
-				<p><strong>Adresse</strong>
-				<address>
-					<?=$event['adresse']?>
-				</address>
+
+				
+
+				<p><strong>Adresse</strong><br>
+				<?=$event['adresse']?>
 				</p>
 				
 				<p>
@@ -96,5 +114,9 @@ if (isset($_GET['addevent'])) {
 		</div>
 	</div>
 </div>
+<?php
+}
+?>
+
 
 <?php include('footer.php'); ?>

@@ -29,6 +29,18 @@ function getUser($email){
 	return $result;
 }
 
+// Funktion som returner brugerstatus for en bruger med en angiven email
+function getUserstatus($email){
+	global $DBH;
+	$q = "SELECT brugerstatus FROM Brugere WHERE email = :email";
+	$STH = $DBH->prepare($q);
+	$STH->bindParam(':email', $email);
+	$STH->execute();
+	$result = $STH->fetch();
+	$resultat = $result['brugerstatus'];
+	return $resultat;
+}
+
 function addFavorite($brugerid, $eventid){
 	global $DBH;
 	$addevent = array('brugerid' => $brugerid, 'eventid' => $eventid);
