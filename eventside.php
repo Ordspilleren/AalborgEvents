@@ -33,18 +33,22 @@ else{
 				<img src="img/tnevent/<?=$event['billedsti']?>" class="img-responsive" alt="">
 				
 				<?php
+				//hvis det ikke er organisationsbruger
 				if ($bruger['brugerstatus'] = 0){
 					?>
 				<p><strong>Afholder</strong><br>
-					<?=$event['afholder']?>
+					<?=$event['afholder'];?>
 				</p>
+				<p><strong>Oprettet af:</strong><br>
+					<?=$bruger['fornavn'] . " " . $bruger['efternavn'];?>
 				<?php
 				}
 				else{
+					//hvis det er organisationsbruger
 				?>
 				<p><strong>Afholder</strong><br>
 					<a href="./profil.php?org=<?=$bruger['ID']?>">
-					<?=$bruger['navn']?></a>
+					<?=$bruger['navn'];?></a>
 				</p>
 				<?php
 				}

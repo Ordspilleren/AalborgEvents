@@ -28,6 +28,10 @@ if (isset($_SESSION['fejl'])){
 					</div>
 					<div class="panel-body">
 						
+
+
+
+					<!-- Hvis man vil oprette en normal profil -->
 					<?php
 					if (!isset($_GET['ORG']))
 					{
@@ -60,12 +64,6 @@ if (isset($_SESSION['fejl'])){
 								</div>
 								
 
-								<div id="organization" style="display: none">
-									<div class="form-group">
-										<input type="text" class="form-control input-sm" placeholder="Lav en kort beskrivelse af din organisation"></input>
-									</div>
-								</div>
-
 								<input type="submit" value="Opret bruger" class="btn btn-block">
 								<br/>
 
@@ -77,6 +75,13 @@ if (isset($_SESSION['fejl'])){
 							</div>
 
 						</form>
+
+
+
+
+
+				
+					<!-- Hvis man vil oprette en organisationsprofil -->
 						<?php 
 					}
 					else 
@@ -105,6 +110,15 @@ if (isset($_SESSION['fejl'])){
 									<div class="col-md-6">
 										<div class="form-group">
 											<input type="password" name="pw2" id="pw2" class="form-control input-sm" placeholder="Bekræft dit password" required>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="billede">Tilføj et profilbillede:</label>
+											<input type="file" name="billede" id="billede" class="input-sm">
 										</div>
 									</div>
 								</div>

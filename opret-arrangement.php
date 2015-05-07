@@ -1,12 +1,17 @@
 <?php
 session_start();
+require_once('database.php');
 require_once('functions.php');
 
 
 
 include ('header.php'); 
 if (loggedIn() == true) {
+	//tjekker om det er en organisation eller normalbruger
+	$email = $_SESSION['email'];
+	$status = getUserstatus($email);
 ?>
+
 <div class="container">
 		<div class="row min-form">
 			<div class="col-sm-12">
@@ -42,6 +47,9 @@ if (loggedIn() == true) {
 								
 
 								<!-- Navn på arrangør af arrangement -->
+								<?php 
+								if ($status == '0'){
+								?>
 								<div class="col-sm-6">
 									<div class="form-group">
 											<label for="afholder">Arrangør:</label>
@@ -50,7 +58,9 @@ if (loggedIn() == true) {
 										</div>
 									</div>
 								</div>
-
+								<?php
+								}
+								?>
 								<!-- dato vælger -->
 								<div class="col-sm-6">
 									<div class="form-group">
