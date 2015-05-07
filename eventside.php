@@ -12,9 +12,9 @@ else{
 	//print_r($event);	
 	$bruger = getUser($event['bruger']);
 
-if (isset($_GET['addevent'])) {
+if (isset($_GET['addevent']) && loggedIn() == true) {
 	addFavorite($_SESSION['brugerid'], $eventid);
-}
+} 
 ?>
 <div class="container">
 	<ol class="breadcrumb">
@@ -22,6 +22,9 @@ if (isset($_GET['addevent'])) {
 		<li><a href="eventliste.php">Arrangementer</a></li>
 		<li class="active"><?=$event['eventnavn']?></li>
 	</ol>
+	<?php if (isset($_GET['addevent']) && loggedIn() == false) { ?>
+	<div class="alert alert-danger" role="alert">Du skal være logget ind for at tilføje dette event til din side.</div>
+	<?php } ?>
 	<div class="row">
 		<div class="col-md-4">
 			<div class="event-info">
@@ -86,7 +89,7 @@ if (isset($_GET['addevent'])) {
 				<!-- Google maps API, (bruger urlencode på den indtastede addresse fra databasen) -->
 				<iframe width="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAPR6aYdpgiTTUkNn0qIS8vG0mTUBkDszs&q=<?=urlencode($event['adresse'])?>"></iframe>
 				<button type="button" class="btn btn-info btn-block" disabled="disabled">Køb billet</button>
-				<a href="?event=<?=$eventid;?>&addevent" class="btn btn-success btn-block" <?=(loggedIn() == true) ? "" : "disabled='disabled'"?>>Tilføj til min side</a>
+				<a href="?event=<?=$eventid;?>&addevent" class="btn btn-success btn-block">Tilføj til min side</a>
 			</div>
 		</div>
 
@@ -103,12 +106,19 @@ if (isset($_GET['addevent'])) {
 			<div class="featured-events">
 				<h1>Lignende events</h1>
 				<ul class="event-list-small">
+					<?php
+					$q = "SELECT * FROM Events WHERE kategorier = '$event[kategorier]'";
+					$events = $DBH->query($q);
+					$events->execute();
+					foreach ($events as $event) {
+					?>
 					<li>
-						<img alt="Independence Day" src="http://www.claussondberg.dk/wp-content/uploads/25-FAELS-Karneval-18.jpg" />
+						<img alt="<?=$event['eventnavn'];?>" src="img/tnevent/<?=$event['billedsti']?>" />
 						<div class="info">
-							<h1>Aalborg Karneval</h1>
+							<h1><a href="eventside.php?event=<?=$event['ID'];?>"><?=$event['eventnavn'];?></a></h1>
 						</div>
 					</li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>

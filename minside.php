@@ -21,7 +21,7 @@ $brugermail = $_SESSION['email'];
 				foreach (getBrugerEvents($brugerid) as $event) {
 				?>
 				<li>
-					<img alt="Independence Day" src="http://www.claussondberg.dk/wp-content/uploads/25-FAELS-Karneval-18.jpg" />
+					<img alt="<?=$event['eventnavn'];?>" src="img/tnevent/<?=$event['billedsti']?>" />
 					<div class="info">
 						<span class="date"><?=date("d/m/Y", strtotime($event['startdato']));?></span>
 						<h2 class="title"><a href="eventside.php?event=<?=$event['ID'];?>"><?=$event['eventnavn'];?></a></h2>
@@ -29,7 +29,7 @@ $brugermail = $_SESSION['email'];
 					</div>
 					<div class="social">
 						<ul>
-							<li class="bookmark" style="width:33%;"><a href="#bookmark"><span class="fa fa-bookmark"></span></a></li>
+							<li class="bookmark" style="width:33%;"><a href="eventside.php?event=<?=$event['ID'];?>&addevent"><span class="fa fa-bookmark"></span></a></li>
 							<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
 							<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
 						</ul>
@@ -50,7 +50,7 @@ $brugermail = $_SESSION['email'];
 				foreach ($events as $event) {
 				?>
 				<li>
-					<img alt="Independence Day" src="http://www.claussondberg.dk/wp-content/uploads/25-FAELS-Karneval-18.jpg" />
+					<img alt="<?=$event['eventnavn'];?>" src="img/tnevent/<?=$event['billedsti']?>" />
 					<div class="info">
 						<span class="date"><?=date("d/m/Y", strtotime($event['startdato']));?></span>
 						<h2 class="title"><a href="eventside.php?event=<?=$event['ID'];?>"><?=$event['eventnavn'];?></a></h2>
@@ -58,7 +58,7 @@ $brugermail = $_SESSION['email'];
 					</div>
 					<div class="social">
 						<ul>
-							<li class="bookmark" style="width:33%;"><a href="#bookmark"><span class="fa fa-bookmark"></span></a></li>
+							<li class="bookmark" style="width:33%;"><a href="eventside.php?event=<?=$event['ID'];?>&addevent"><span class="fa fa-bookmark"></span></a></li>
 							<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
 							<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
 						</ul>
