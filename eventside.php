@@ -10,9 +10,9 @@ else{
 	$eventid = $_GET['event'];
 	$event = getEvent($eventid);
 	//print_r($event);	
-}
+	$bruger = getUser($event['bruger']);
+	//print_r($bruger);
 ?>
-
 <div class="container">
 	<ol class="breadcrumb">
 		<li><a href="index.php">AalborgEvents</a></li>
@@ -31,14 +31,30 @@ else{
 					</ul>
 				</div>
 				<img src="img/tnevent/<?=$event['billedsti']?>" class="img-responsive" alt="">
-				<p><b>Afholder</b><br>
+				
+				<?php
+				if ($bruger['brugerstatus'] = 0){
+					?>
+				<p><strong>Afholder</strong><br>
 					<?=$event['afholder']?>
 				</p>
+				<?php
+				}
+				else{
+				?>
+				<p><strong>Afholder</strong><br>
+					<a href="./profil.php?org=<?=$bruger['ID']?>">
+					<?=$bruger['navn']?></a>
+				</p>
+				<?php
+				}
+				?>
 
-				<p><strong>Adresse</strong>
-				<address>
-					<?=$event['adresse']?>
-				</address>
+
+				
+
+				<p><strong>Adresse</strong><br>
+				<?=$event['adresse']?>
 				</p>
 				
 				<p>
@@ -90,5 +106,9 @@ else{
 		</div>
 	</div>
 </div>
+<?php
+}
+?>
+
 
 <?php include('footer.php'); ?>
