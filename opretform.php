@@ -87,7 +87,7 @@ if (isset($_SESSION['fejl'])){
 					else 
 					{
 					?>
-					<form action="opret.php" method="post" id="form">
+					<form action="opret.php" method="post" id="form" enctype="multipart/form-data">
 							
 
 								<div class="form-group">
