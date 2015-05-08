@@ -21,55 +21,55 @@ if(isset($_GET['kategori'])) {
 			<ul class="eventkategorier">
 				<li>
 					<a href="?kategori=Sport">
-						<img src="http://placehold.it/500x100" alt="">
+						<img src="img/kategorier/sport.png" alt="">
 						<h2 class="title">Sport & Motion</h2>
 					</a>
 				</li>
 				<li>
 					<a href="?kategori=Musik">
-						<img src="http://placehold.it/500x100" alt="">
+						<img src="img/kategorier/musik.png" alt="">
 						<h2 class="title">Musik</h2>
 					</a>
 				</li>
 				<li>
 					<a href="?kategori=Hygge">
-						<img src="http://placehold.it/500x100" alt="">
+						<img src="img/kategorier/hygge.png" alt="">
 						<h2 class="title">Hygge</h2>
 					</a>
 				</li>
 				<li>
 					<a href="?kategori=Kunst">
-						<img src="http://placehold.it/500x100" alt="">
+						<img src="img/kategorier/kunst.png" alt="">
 						<h2 class="title">Kunst & Kultur</h2>
 					</a>
 				</li>
 				<li>
 					<a href="?kategori=Mad">
-						<img src="http://placehold.it/500x100" alt="">
+						<img src="img/kategorier/mad.png" alt="">
 						<h2 class="title">Mad & Drikke</h2>
 					</a>
 				</li>
 				<li>
 					<a href="?kategori=Natur">
-						<img src="http://placehold.it/500x100" alt="">
+						<img src="img/kategorier/natur.png" alt="">
 						<h2 class="title">Natur</h2>
 					</a>
 				</li>
 				<li>
 					<a href="?kategori=Fest">
-						<img src="img/fest.png" alt="">
+						<img src="img/kategorier/fest.png" alt="">
 						<h2 class="title">Fest</h2>
 					</a>
 				</li>
 				<li>
 					<a href="?kategori=Foredrag">
-						<img src="http://placehold.it/500x100" alt="">
+						<img src="img/kategorier/foredrag.png" alt="">
 						<h2 class="title">Foredrag</h2>
 					</a>
 				</li>
 				<li>
 					<a href="?kategori=Familien">
-						<img src="http://placehold.it/500x100" alt="">
+						<img src="img/kategorier/familien.png" alt="">
 						<h2 class="title">For hele familien</h2>
 					</a>
 				</li>
@@ -90,7 +90,7 @@ if(isset($_GET['kategori'])) {
 				foreach ($events as $event) {
 				?>
 				<li>
-					<img alt="Independence Day" src="http://www.claussondberg.dk/wp-content/uploads/25-FAELS-Karneval-18.jpg" />
+					<img alt="<?=$event['eventnavn'];?>" src="img/tnevent/<?=$event['billedsti']?>" />
 					<div class="info">
 						<span class="date"><?=date("d/m/Y", strtotime($event['startdato']));?></span>
 						<h2 class="title"><a href="eventside.php?event=<?=$event['ID'];?>"><?=$event['eventnavn'];?></a></h2>
@@ -98,9 +98,9 @@ if(isset($_GET['kategori'])) {
 					</div>
 					<div class="social">
 						<ul>
-							<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-bookmark"></span></a></li>
+							<li class="bookmark" style="width:33%;"><a href="eventside.php?event=<?=$event['ID'];?>&addevent"><span class="fa fa-bookmark"></span></a></li>
+							<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
 							<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
-							<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
 						</ul>
 					</div>
 				</li>

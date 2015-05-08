@@ -43,10 +43,19 @@ function getUserstatus($email){
 
 function addFavorite($brugerid, $eventid){
 	global $DBH;
-	$addevent = array('brugerid' => $brugerid, 'eventid' => $eventid);
-	$q = "INSERT INTO brugerfavoritter (brugerid, eventid) VALUES (:brugerid, :eventid)";
+	$q = "SELECT * FROM brugerfavoritter WHERE brugerid = :brugerid AND eventid = :eventid";
 	$STH = $DBH->prepare($q);
-	$STH->execute($addevent);
+	$STH->bindParam(':brugerid', $brugerid);
+	$STH->bindParam(':eventid', $eventid);
+	$STH->execute();
+	$tjek = $STH->fetch();
+
+	if (empty($tjek)){
+		$addevent = array('brugerid' => $brugerid, 'eventid' => $eventid);
+		$q = "INSERT INTO brugerfavoritter (brugerid, eventid) VALUES (:brugerid, :eventid)";
+		$STH = $DBH->prepare($q);
+		$STH->execute($addevent);
+	}
 }
 
 function getBrugerEvents($brugerid){
@@ -59,13 +68,13 @@ function getBrugerEvents($brugerid){
 }
 
 function truncate($string,$length=150,$append="&hellip;") {
-  $string = trim($string);
+	$string = trim($string);
 
-  if(strlen($string) > $length) {
-    $string = wordwrap($string, $length);
-    $string = explode("\n", $string, 2);
-    $string = $string[0] . $append;
-  }
+	if(strlen($string) > $length) {
+		$string = wordwrap($string, $length);
+		$string = explode("\n", $string, 2);
+		$string = $string[0] . $append;
+	}
 
-  return $string;
+	return $string;
 }
