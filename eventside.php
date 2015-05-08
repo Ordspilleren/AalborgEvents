@@ -23,7 +23,9 @@ if (isset($_GET['addevent']) && loggedIn() == true) {
 		<li class="active"><?=$event['eventnavn']?></li>
 	</ol>
 	<?php if (isset($_GET['addevent']) && loggedIn() == false) { ?>
-	<div class="alert alert-danger" role="alert">Du skal være logget ind for at tilføje dette event til din side.</div>
+	<div class="alert alert-danger" role="alert">Du skal være logget ind for at tilføje dette arrangement til din side.</div>
+	<?php } else if (isset($_GET['addevent']) && loggedIn() == true) { ?>
+	<div class="alert alert-success" role="alert">Dette arrangement er nu tilføjet til din side.</div>
 	<?php } ?>
 	<div class="row">
 		<div class="col-md-4">
