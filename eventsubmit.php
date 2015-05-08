@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('database.php');
+
 //sæt variabler fra brugerens indtastede data
 if(isset($_POST['submitknap'])){
 	$eventnavn = $_POST['eventnavn'];
@@ -86,6 +87,28 @@ print_r($nytevent);
 	$STH->execute($nytevent);
 
 	echo "Great success!";
+
+
+	//bind eventetid'et til brugerid'et
+	//start med at finde ud af hvilket ID eventet har fået i databasen
+	$q = "SELECT ID FROM Events WHERE eventnavn = :eventnavn";
+	$STH = $DBH->prepare($q);
+	$STH->bindParam(':eventnavn', $eventnavn);
+	$STH->execute();
+	$EID = $STH->fetch();
+
+
+	$brugerid = $_SESSION['brugerid'];
+	$createdid = $EID['ID'];
+
+	//opdater brugerfavoritter tabel med brugerid og eventid
+	$q = "INSERT INTO brugerfavoritter (brugerid, createdid) VALUES (:brugerid, :createdid)";
+	$STH = $DBH->prepare($q);
+	$STH->bindParam(':brugerid', $brugerid);
+	$STH->bindParam(':createdid', $createdid);
+	$STH->execute();
+
+
 
 }
 else{
