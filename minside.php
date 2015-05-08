@@ -5,8 +5,8 @@ include('header.php');
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h2>Tilmeldte arrangmenter</h2>
-            <p>Dette er din personlige side hvor du kan se de arrangementer du er tilmeldt til</p>
+            <h2>Gemte arrangementer</h2>
+            <p>Dette er din personlige side hvor du kan se de arrangementer du har gemt</p>
             <ul class="event-list">
 				<li>
 					<img alt="Independence Day" src="http://www.claussondberg.dk/wp-content/uploads/25-FAELS-Karneval-18.jpg" />
@@ -40,7 +40,6 @@ include('header.php');
 				</li>
 			</ul>   
 		</div>
-		
         <div class="col-md-6">
 			<h2>Oprettede arrangementer</h2>
 			<p>Her kan du se de arrangementer du selv har oprettet</p>
@@ -92,9 +91,9 @@ include('header.php');
 					</div>
 					<div class="social">
 						<ul>
-							<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook fa-3x"></span></a></li>
-							<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter fa-3x"></span></a></li>
-							<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus fa-3x"></span></a></li>
+							<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook fa-2x"></span></a></li>
+							<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter fa-2x"></span></a></li>
+							<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus fa-2x"></span></a></li>
 						</ul>
 					</div>
 				</li>

@@ -307,49 +307,6 @@ body {
 }
 
 
-
-/*
-	PROFIL INFO
-*/
-
-.profile {
-	padding: 5px;
-	margin-bottom: 10px;
-	color: inherit;
-	background-color: #eee;
-	height: 240px;
-	box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
-}
-
-.profile > img {
-	width: 200px;
-	height: 200px;
-	display: inline-block;
-	margin: 15px;
-	float: left;
-	border: solid 5px white;
-}
-
-.profile > .title {
-	font-size: 17pt;
-	font-weight: 400;
-}
-
-.profile > .info {
-	overflow: hidden;
-	position: relative;
-	text-align: left;
-}
-
-.profile > .edit {
-	float: right;
-	margin: 15px;
-}
-
-.profile > .stats {
-	
-}
-
 /* 
 	POPULÆRE EVENTSIDE
 */
@@ -687,15 +644,15 @@ body {
 		position: relative;
 		display: block;
 		width: 100%;
-		height: 200px;
+		height: 150px;
 		padding: 0px;
 	}
 
 	.followers > li > img {
 		
 		display: inline-block;
-		width: 200px;
-		height: 200px;
+		width: 150px;
+		height: 150px;
 		float: left;
 		padding: 0px;
 		margin: 0px;
@@ -710,7 +667,7 @@ body {
 
 	.followers > li > .info {
 		position: relative;
-		height: 200px;
+		height: 150px;
 		text-align: left;
 		padding-right: 100px;
 	}	
@@ -740,13 +697,202 @@ body {
 
 	.followers > li > .social > ul > li {			
 		display: block;
-		height: 67px;
+		height: 50px;
 	}
 	
 	.followers > li > .social > ul > li > a {
 		display: block;
 		width: 100px;
-		padding: 13px 0px 10px;
+		padding: 12px 0px 10px;
+	}
+}	
+
+
+/*
+	Profil
+*/
+.profile {
+	padding: 20px;
+	margin-bottom: 10px;
+	color: inherit;
+	background-color: #c7c7c7;
+	box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+}
+
+.profileimg {
+	border: solid 5px white;
+	background-color: #ffffff;
+	box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+}
+
+.profile-title {
+	font-size: 35pt;
+	font-weight: 400;
+	margin-top: -5px;
+}
+
+.info {
+	overflow: hidden;
+	position: relative;
+	text-align: left;
+}
+
+.profile > .follow {
+	width: 100px;
+	float: right;
+	margin: 15px;
+}
+
+
+.profile-events {
+	list-style: none;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+.profile-events > li {
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 0px 5px rgb(51, 51, 51);
+	box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+	padding: 0px;
+	margin: 0px 0px 20px;
+}
+
+.profile-events > li > .info > .date {
+	float: right;
+	margin-right: 1em;
+}
+
+.profile-events > li > img {
+	width: 100%;
+}
+
+.profile-events > li > .info {
+	padding-top: 5px;
+	text-align: center;
+}
+
+.profile-events > li > .info > .title {
+	font-size: 17pt;
+	font-weight: 400;
+	margin: 0px;
+}
+
+.profile-events > li > .info > .desc {
+	font-size: 12pt;
+	margin: 0px;
+}
+
+.profile-events > li > .info > ul,
+.profile-events > li > .social > ul {
+	display: table;
+	list-style: none;
+	margin: 10px 0px 0px;
+	padding: 0px;
+	width: 100%;
+	text-align: center;
+}
+
+.profile-events > li > .social > ul {
+	margin: 0px;
+}
+
+.profile-events > li > .info > ul > li,
+.profile-events > li > .social > ul > li {
+	display: table-cell;
+	cursor: pointer;
+	color: rgb(30, 30, 30);
+	font-size: 11pt;
+	font-weight: 300;
+	padding: 3px 0px;
+}
+
+.profile-events > li > .info > ul > li > a {
+	display: block;
+	width: 100%;
+	color: rgb(30, 30, 30);
+	text-decoration: none;
+} 
+
+.profile-events > li > .social > ul > li {    
+	padding: 0px;
+}
+
+.profile-events > li > .social > ul > li > a {
+	padding: 3px 0px;
+} 
+
+.profile-events > li > .info > ul > li:hover,
+.profile-events > li > .social > ul > li:hover {
+	color: rgb(30, 30, 30);
+	background-color: rgb(200, 200, 200);
+}
+
+@media (min-width: 768px) {
+	.profile-events > li {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 150px;
+		padding: 0px;
+	}
+
+	.profile-events > li > img {
+		
+		display: inline-block;
+		width: 150px;
+		height: 150px;
+		float: left;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	.profile-events > li > .info {
+		background-color: rgb(245, 245, 245);
+		overflow: hidden;
+	}
+
+	
+
+	.profile-events > li > .info {
+		position: relative;
+		height: 150px;
+		text-align: left;
+		padding-right: 100px;
+	}	
+
+	.profile-events > li > .info > .title, 
+	.profile-events > li > .info > .desc {
+		padding: 0px 10px;
+	}
+
+	.profile-events > li > .info > ul {
+		position: absolute;
+		left: 0px;
+		bottom: 0px;
+	}
+
+	.profile-events > li > .social {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		display: block;
+		width: 100px;
+	}
+
+	.profile-events > li > .social > ul {
+		border-left: 1px solid rgb(230, 230, 230);
+	}
+
+	.profile-events > li > .social > ul > li {			
+		display: block;
+		height: 50px;
+	}
+	
+	.profile-events > li > .social > ul > li > a {
+		display: block;
+		width: 100px;
+		padding: 12px 0px 10px;
 	}
 }	
 	
