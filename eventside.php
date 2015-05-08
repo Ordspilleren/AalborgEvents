@@ -55,7 +55,7 @@ if (isset($_GET['addevent']) && loggedIn() == true) {
 					//hvis det er organisationsbruger
 				?>
 				<p><strong>Afholder</strong><br>
-					<a href="./profil.php?org=<?=$bruger['ID']?>">
+					<a href="./profil.php?profilid=<?=$bruger['ID']?>">
 					<?=$bruger['navn'];?></a>
 				</p>
 				<?php

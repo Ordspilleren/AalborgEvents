@@ -53,31 +53,31 @@ include('header.php');
 				<h2>Kategorier</h2>
 				<ul class="eventkategorier">
 					<li>
-						<a href="?kategori=Sport">
+						<a href="eventliste.php?kategori=Sport">
 							<img src="img/kategorier/sport.png" alt="">
 							<h2 class="title">Sport & Motion</h2>
 						</a>
 					</li>
 					<li>
-						<a href="?kategori=Musik">
+						<a href="eventliste.php?kategori=Musik">
 							<img src="img/kategorier/musik.png" alt="">
 							<h2 class="title">Musik</h2>
 						</a>
 					</li>
 					<li>
-						<a href="?kategori=Fest">
+						<a href="eventliste.php?kategori=Fest">
 							<img src="img/kategorier/fest.png" alt="">
 							<h2 class="title">Fest</h2>
 						</a>
 					</li>
 					<li>
-						<a href="?kategori=Foredrag">
+						<a href="eventliste.php?kategori=Foredrag">
 							<img src="img/kategorier/foredrag.png" alt="">
 							<h2 class="title">Foredrag</h2>
 						</a>
 					</li>
 					<li>
-						<a href="?kategori=Familien">
+						<a href="eventliste.php?kategori=Familien">
 							<img src="img/kategorier/familien.png" alt="">
 							<h2 class="title">For hele familien</h2>
 						</a>

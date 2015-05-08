@@ -20,7 +20,13 @@ function getEvent($id){
 
 function getUser($email){
 	global $DBH;
-	$q = "SELECT * FROM Brugere WHERE email = :email";
+
+	if (is_numeric($email)){
+		$q = "SELECT * FROM Brugere WHERE ID = :email";
+	} else {
+		$q = "SELECT * FROM Brugere WHERE email = :email";
+	}
+
 	$STH = $DBH->prepare($q);
 	$STH->bindParam(':email', $email);
 	$STH->execute();
@@ -55,6 +61,23 @@ function addFavorite($brugerid, $eventid){
 		$q = "INSERT INTO brugerfavoritter (brugerid, eventid) VALUES (:brugerid, :eventid)";
 		$STH = $DBH->prepare($q);
 		$STH->execute($addevent);
+	}
+}
+
+function addFollow($brugerid, $follow){
+	global $DBH;
+	$q = "SELECT * FROM brugerfavoritter WHERE brugerid = :brugerid AND following = :follow";
+	$STH = $DBH->prepare($q);
+	$STH->bindParam(':brugerid', $brugerid);
+	$STH->bindParam(':follow', $follow);
+	$STH->execute();
+	$tjek = $STH->fetch();
+
+	if (empty($tjek)){
+		$addfollow = array('brugerid' => $brugerid, 'follow' => $follow);
+		$q = "INSERT INTO brugerfavoritter (brugerid, following) VALUES (:brugerid, :follow)";
+		$STH = $DBH->prepare($q);
+		$STH->execute($addfollow);
 	}
 }
 
