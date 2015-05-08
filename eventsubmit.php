@@ -5,7 +5,7 @@ require_once('database.php');
 //sæt variabler fra brugerens indtastede data
 if(isset($_POST['submitknap'])){
 	$eventnavn = $_POST['eventnavn'];
-	$afholder = $_POST['afholder'];
+	(isset($_POST['afholder'])) ? $afholder = $_POST['afholder'] : $afholder = '';
 	$startdato = $_POST['startdato'];
 	$starttid = $_POST['starttid'];
 	$slutdato = $_POST['slutdato'];
