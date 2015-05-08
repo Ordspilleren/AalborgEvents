@@ -42,10 +42,11 @@ if (isset($_GET['addevent']) && loggedIn() == true) {
 				
 				<?php
 				//hvis det ikke er organisationsbruger
-				if ($bruger['brugerstatus'] = 0){
+				if ($bruger['brugerstatus'] == 0){
 					?>
-				<p><strong>Afholder</strong><br>
-					<?=$event['afholder'];?>
+
+				<p><strong>Arrangør:</strong><br>
+					<?=$event['afholder']?>
 				</p>
 				<p><strong>Oprettet af:</strong><br>
 					<?=$bruger['fornavn'] . " " . $bruger['efternavn'];?>
@@ -54,7 +55,7 @@ if (isset($_GET['addevent']) && loggedIn() == true) {
 				else{
 					//hvis det er organisationsbruger
 				?>
-				<p><strong>Afholder</strong><br>
+				<p><strong>Arrangør</strong><br>
 					<a href="./profil.php?profilid=<?=$bruger['ID']?>">
 					<?=$bruger['navn'];?></a>
 				</p>
@@ -63,7 +64,6 @@ if (isset($_GET['addevent']) && loggedIn() == true) {
 				?>
 
 
-				
 
 				<p><strong>Adresse</strong><br>
 				<?=$event['adresse']?>
@@ -92,6 +92,14 @@ if (isset($_GET['addevent']) && loggedIn() == true) {
 				<iframe width="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAPR6aYdpgiTTUkNn0qIS8vG0mTUBkDszs&q=<?=urlencode($event['adresse'])?>"></iframe>
 				<button type="button" class="btn btn-info btn-block" disabled="disabled">Køb billet</button>
 				<a href="?event=<?=$eventid;?>&addevent" class="btn btn-success btn-block">Tilføj til min side</a>
+				<?php 
+				//hvis eventID på arrangementet passer overens med brugerID på den bruger der ser siden, så kan arrangementet ændres.
+				if ($event['bruger'] == $_SESSION['email']){
+				?>
+				<a href="./changeevent.php?ID=<?=$eventid;?>" class="btn btn-danger btn-block">Ændre i dette event</a>
+				<?php
+				}
+				?>
 			</div>
 		</div>
 
