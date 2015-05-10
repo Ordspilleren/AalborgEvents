@@ -25,7 +25,7 @@ include('header.php');
 				<h2>Featured arrangementer</h2>
 				<ul class="event-list">
 					<?php
-					$q = "SELECT * from Events inner join brugerfavoritter on brugerfavoritter.eventid=Events.ID ORDER BY eventid DESC LIMIT 5";
+					$q = "SELECT * from Events inner join brugerfavoritter on brugerfavoritter.eventid=Events.ID GROUP BY eventid ORDER BY eventid LIMIT 5";
 					$events = $DBH->query($q);
 					$events->execute();
 

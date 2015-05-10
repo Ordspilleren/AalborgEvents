@@ -17,29 +17,29 @@ if (isset($_GET['follow']) && loggedIn() == true) {
 	<?php } else if (isset($_GET['follow']) && loggedIn() == true) { ?>
 	<div class="alert alert-success" role="alert">Du følger nu denne arrangør.</div>
 	<?php } ?>
+
 	<div class="row">
 		<div class="col-md-12">
 			<div class="profile">
-				<div class="row">
-					<div class="col-md-2">
-						<div class="profileimg">
-							<img class="img-responsive" src="img/brugerpic/<?=(empty($bruger['profilbanner'])) ? "default.png" : $bruger['profilbanner']?>"/>
-						</div>
-					</div>
-					<div class="col-md-10">
-						<div class="follow">
-							<a href="?profilid=<?=$profilid;?>&follow" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Følg</a>
-						</div>
-						<h2 class="profile-title"><?=$bruger['navn'];?></h1>
-						<p class="info">
-							<?=$bruger['beskrivelse'];?>
-						</p>
+				<div class="col-md-3">
+					<div class="profileimg">
+						<img class="img-responsive" src="img/brugerpic/<?=(empty($bruger['profilbanner'])) ? "default.png" : $bruger['profilbanner']?>"/>
 					</div>
 				</div>
-				
+
+				<div class="col-md-9">
+					<div class="follow">
+						<a href="?profilid=<?=$profilid;?>&follow" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Følg</a>
+					</div>
+					<h2 class="profile-title"><?=$bruger['navn'];?></h2>
+					<p class="info">
+						<?=$bruger['beskrivelse'];?>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
+				
 	<div class="row">
 		<div class="col-md-12">
 			<h1>Næste arrangement fra denne arrangør:</h1>

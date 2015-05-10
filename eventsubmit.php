@@ -77,7 +77,6 @@ if (empty($tjek)){
 
 
 $nytevent = array('eventnavn' => $eventnavn, 'afholder' => $afholder, 'startdato' => $startdato, 'starttid' => $starttid, 'slutdato' => $slutdato, 'sluttid' => $sluttid, 'adresse' => $adresse, 'kategorier' => $kategorier, 'billedsti' => $billedsti, 'beskrivelse' => $beskrivelse, 'bruger' => $bruger);
-print_r($nytevent);
 
 
 	//indsæt nyt event i databasen
@@ -85,9 +84,6 @@ print_r($nytevent);
 	$q = "INSERT INTO Events (eventnavn, afholder, startdato, starttid, slutdato, sluttid, adresse, kategorier, billedsti, beskrivelse, bruger) VALUES (:eventnavn, :afholder, :startdato, :starttid, :slutdato, :sluttid, :adresse, :kategorier, :billedsti, :beskrivelse, :bruger)";
 	$STH = $DBH->prepare($q);
 	$STH->execute($nytevent);
-
-	echo "Great success!";
-
 
 	//bind eventetid'et til brugerid'et
 	//start med at finde ud af hvilket ID eventet har fået i databasen
@@ -108,7 +104,7 @@ print_r($nytevent);
 	$STH->bindParam(':createdid', $createdid);
 	$STH->execute();
 
-
+	header("Location: ./eventside.php?opret&event=" . $createdid);
 
 }
 else{
