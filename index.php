@@ -50,7 +50,7 @@ include('header.php');
 				</ul>
 			</div>
 			<div class="col-md-4">
-				<h2>Kategorier</h2>
+				<h2>Populære kategorier</h2>
 				<ul class="eventkategorier">
 					<li>
 						<a href="eventliste.php?kategori=Sport">
