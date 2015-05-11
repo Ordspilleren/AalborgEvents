@@ -112,7 +112,7 @@ body {
 		-webkit-transform:scale(1.0);	
 	}
 	to {
-		-webkit-transform:scale(1.05);
+		-webkit-transform:scale(1.1);
 	}
 }
 
@@ -121,7 +121,7 @@ body {
 		transform:scale(1.0);	
 	}
 	to {
-		transform:scale(1.05);
+		transform:scale(1.1);
 	}
 }
 
