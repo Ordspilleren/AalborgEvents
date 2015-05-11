@@ -18,17 +18,21 @@ $brugermail = $_SESSION['email'];
 	</ol>
     <div class="row">
         <div class="col-md-6">
-            <h2>Tilmeldte arrangmenter</h2>
-            <p>Dette er din personlige side hvor du kan se de arrangementer du er tilmeldt til</p>
+            <h2>Gemte arrangmenter</h2>
+            <p>Her kan du se de arrangementer du har gemt</p>
             <ul class="event-list">
             	<?php
 				foreach (getBrugerEvents($brugerid) as $event) {
+					$bruger = getUser($event['bruger']);
 				?>
 				<li>
 					<img alt="<?=$event['eventnavn'];?>" src="img/tnevent/<?=$event['billedsti']?>" />
 					<div class="info">
 						<span class="date"><?=date("d/m/Y", strtotime($event['startdato']));?></span>
 						<h2 class="title"><a href="eventside.php?event=<?=$event['ID'];?>"><?=$event['eventnavn'];?></a></h2>
+						<?php if ($bruger['brugerstatus'] == 1) { ?>
+						<p class="org"><a href="profil.php?profilid=<?=$bruger['ID']?>"><?=$bruger['navn'];?></a></p>
+						<?php } ?>
 						<p class="desc"><?=truncate($event['beskrivelse']);?></p>
 					</div>
 					<div class="social">
@@ -91,6 +95,9 @@ $brugermail = $_SESSION['email'];
 					<div class="info">
 						<span class="date"><?=date("d/m/Y", strtotime($event['startdato']));?></span>
 						<h2 class="title"><a href="eventside.php?event=<?=$event['ID'];?>"><?=$event['eventnavn'];?></a></h2>
+						<?php if ($bruger['brugerstatus'] == 1) { ?>
+						<p class="org"><a href="profil.php?profilid=<?=$bruger['ID']?>"><?=$bruger['navn'];?></a></p>
+						<?php } ?>
 						<p class="desc"><?=truncate($event['beskrivelse']);?></p>
 					</div>
 					<div class="social">

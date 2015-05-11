@@ -30,12 +30,16 @@ include('header.php');
 					$events->execute();
 
 					foreach ($events as $event) {
+						$bruger = getUser($event['bruger']);
 					?>
 					<li>
 						<img alt="<?=$event['eventnavn'];?>" src="img/tnevent/<?=$event['billedsti']?>" />
 						<div class="info">
 							<span class="date"><?=date("d/m/Y", strtotime($event['startdato']));?></span>
 							<h2 class="title"><a href="eventside.php?event=<?=$event['ID'];?>"><?=$event['eventnavn'];?></a></h2>
+							<?php if ($bruger['brugerstatus'] == 1) { ?>
+							<p class="org"><a href="profil.php?profilid=<?=$bruger['ID']?>"><?=$bruger['navn'];?></a></p>
+							<?php } ?>
 							<p class="desc"><?=truncate($event['beskrivelse']);?></p>
 						</div>
 						<div class="social">

@@ -84,16 +84,21 @@ if(isset($_GET['kategori'])) {
 		<div class="col-md-9">
 			<ul class="event-list">
 				<?php
+				if (isset($_GET['kategori'])) {
 				$q = "SELECT * FROM Events WHERE kategorier = '$kategori'";
 				$events = $DBH->query($q);
 				$events->execute();
 				foreach ($events as $event) {
+					$bruger = getUser($event['bruger']);
 				?>
 				<li>
 					<img alt="<?=$event['eventnavn'];?>" src="img/tnevent/<?=$event['billedsti']?>" />
 					<div class="info">
 						<span class="date"><?=date("d/m/Y", strtotime($event['startdato']));?></span>
 						<h2 class="title"><a href="eventside.php?event=<?=$event['ID'];?>"><?=$event['eventnavn'];?></a></h2>
+						<?php if ($bruger['brugerstatus'] == 1) { ?>
+						<p class="org"><a href="profil.php?profilid=<?=$bruger['ID']?>"><?=$bruger['navn'];?></a></p>
+						<?php } ?>
 						<p class="desc"><?=truncate($event['beskrivelse']);?></p>
 					</div>
 					<div class="social">
@@ -104,6 +109,8 @@ if(isset($_GET['kategori'])) {
 						</ul>
 					</div>
 				</li>
+				<?php } } else { ?>
+				<div class="alert alert-info" role="alert">Vælg venligst en kategori til venstre!</div>
 				<?php } ?>
 			</ul>
 		</div>

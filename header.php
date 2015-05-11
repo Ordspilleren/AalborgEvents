@@ -39,6 +39,9 @@ function echoActiveClassIfRequestMatches($requestUri)
 					<li <?=echoActiveClassIfRequestMatches("eventliste.php")?>> 
 						<a href="eventliste.php">Arrangementer</a>
 					</li>
+					<li <?=echoActiveClassIfRequestMatches("orglist.php")?>> 
+						<a href="orglist.php">Arrangører</a>
+					</li>
 					<li <?=echoActiveClassIfRequestMatches("loginform.php")?>> 
 						<a href="login.php"><?=(loggedIn() == true) ? "Log ud" : "Log ind"?></a>
 					</li>
