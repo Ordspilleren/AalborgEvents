@@ -12,6 +12,10 @@ if (isset($_GET['follow']) && loggedIn() == true) {
 ?>
 
 <div class="container">
+	<ol class="breadcrumb">
+		<li><a href="index.php">AalborgEvents</a></li>
+		<li class="active"><?=$bruger['navn'];?></li>
+	</ol>
 	<?php if (isset($_GET['follow']) && loggedIn() == false) { ?>
 	<div class="alert alert-danger" role="alert">Du skal være logget ind for at følge denne arrangør.</div>
 	<?php } else if (isset($_GET['follow']) && loggedIn() == true) { ?>

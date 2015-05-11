@@ -13,6 +13,10 @@ if (loggedIn() == true) {
 ?>
 
 <div class="container">
+	<ol class="breadcrumb">
+		<li><a href="index.php">AalborgEvents</a></li>
+		<li class="active">Opret arrangement</li>
+	</ol>
 		<div class="row min-form">
 			<div class="col-sm-12">
 				<div class="panel panel-default">
@@ -187,4 +191,4 @@ $( "#sluttid" ).click(function() {
 };
 </script>
 
-<? include('footer.php'); ?>
+<?php include('footer.php'); ?>

@@ -12,6 +12,10 @@ $brugermail = $_SESSION['email'];
 ?>
 
 <div class="container">
+	<ol class="breadcrumb">
+		<li><a href="index.php">AalborgEvents</a></li>
+		<li class="active">Min side</li>
+	</ol>
     <div class="row">
         <div class="col-md-6">
             <h2>Tilmeldte arrangmenter</h2>
