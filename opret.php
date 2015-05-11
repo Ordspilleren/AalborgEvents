@@ -30,10 +30,12 @@ if(isset($_POST['fornavn'])){
 		$STH->execute($nybruger);
 
 	//!!!!skift lokation ved implementeringer!!!!
+	/*
 		$_SESSION['nybruger'] = "1";
 		$_SESSION['email'] = $email;
 		$_SESSION['loggedin'] = "true";
-		header("Location: ./index.php");
+	*/
+		header("Location: ./loginform.php?opret");
 	}
 	else {
 	//Hvis emailen findes i databasen allerede.
@@ -118,11 +120,13 @@ elseif (isset($_POST['orgnavn'])){
 
 
 	// sæt session og smid brugeren til forside
+	/*
 		$_SESSION['nybruger'] = "1";
 		$_SESSION['email'] = $email;
 		$_SESSION['loggedin'] = "true";
 		$_SESSION['brugerid']=$r['ID'];
-		header("Location: ./index.php");
+	*/
+		header("Location: ./loginform.php?opret");
 	}
 	else {
 	//Hvis emailen findes i databasen allerede.

@@ -8,6 +8,9 @@ if (isset($_SESSION['fejl'])){
 }
 ?>
 	<div class="container">
+		<?php if (isset($_GET['opret']) && loggedIn() == false) { ?>
+		<div class="alert alert-success" role="alert">Din bruger er oprettet. Du kan nu logge ind her.</div>
+		<?php } ?>
 		<ol class="breadcrumb">
 			<li><a href="index.php">AalborgEvents</a></li>
 			<li class="active">Log ind</li>

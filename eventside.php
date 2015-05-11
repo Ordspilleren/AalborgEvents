@@ -43,9 +43,19 @@ if (isset($_GET['addevent']) && loggedIn() == true) {
 				<img src="img/tnevent/<?=$event['billedsti']?>" class="img-responsive" alt="">
 				
 				<?php
+				$q = "SELECT * from brugerfavoritter WHERE `eventid` = $eventid";
+				$tilmeldte = $DBH->query($q);
+				$tilmeldte->execute();
+
+				if ($tilmeldte->rowCount() == 0){
+					echo "Ingen brugere har tilføjet dette arrangement til deres side.";
+				} else {
+					echo $tilmeldte->rowCount() . " brugere har tilføjet dette arrangement til deres side.";
+				}
+
 				//hvis det ikke er organisationsbruger
 				if ($bruger['brugerstatus'] == 0){
-					?>
+				?>
 
 				<p><strong>Arrangør:</strong><br>
 					<?=$event['afholder']?>
@@ -96,7 +106,7 @@ if (isset($_GET['addevent']) && loggedIn() == true) {
 				<a href="?event=<?=$eventid;?>&addevent" class="btn btn-success btn-block">Tilføj til min side</a>
 				<?php 
 				//hvis eventID på arrangementet passer overens med brugerID på den bruger der ser siden, så kan arrangementet ændres.
-				if ($event['bruger'] == $_SESSION['email']){
+				if (isset($_SESSION['email']) && $event['bruger'] == $_SESSION['email']){
 				?>
 				<a href="./changeevent.php?ID=<?=$eventid;?>" class="btn btn-danger btn-block">Ændre i dette event</a>
 				<?php

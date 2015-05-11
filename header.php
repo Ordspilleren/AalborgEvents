@@ -14,7 +14,7 @@ function echoActiveClassIfRequestMatches($requestUri)
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Aalborg Events</title>
+	<title>EventIT</title>
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -51,8 +51,8 @@ function echoActiveClassIfRequestMatches($requestUri)
 					
 				</ul>
 				<form class="navbar-form navbar-right">
-					<input type="text" placeholder="Søg" class="form-control">
-					<button type="submit" class="btn btn-success">Søg</button>
+					<input type="text" placeholder="Søg" class="form-control" disabled="disabled">
+					<button type="submit" class="btn btn-success" disabled="disabled">Søg</button>
 				</form>
 			</div><!--/.navbar-collapse -->
 		</nav>
