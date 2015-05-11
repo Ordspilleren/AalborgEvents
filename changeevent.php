@@ -115,7 +115,7 @@ if ($event['bruger'] == $_SESSION['email']) {
 										<div class="">
 											<select name="kategorier" id="kategori" class="form-control input-sm" required>
 												<option value="Diverse">Diverse</option>
-												<option value="Familien">For hele famielien</option>
+												<option value="Familien">For hele familien</option>
 												<option value="Fest">Fest</option>
 												<option value="Foredrag">Foredrag</option>
 												<option value="Hygge">Hygge</option>

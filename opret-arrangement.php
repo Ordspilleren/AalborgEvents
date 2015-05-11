@@ -58,7 +58,7 @@ if (loggedIn() == true) {
 									<div class="form-group">
 											<label for="afholder">Arrangør:</label>
 										<div>
-											<input type="text" name="afholder" id="afholder" class="form-control input-sm" placeholder="Indtast sted" required>
+											<input type="text" name="afholder" id="afholder" class="form-control input-sm" placeholder="Indtast arrangør" required>
 										</div>
 									</div>
 								</div>
@@ -131,7 +131,7 @@ if (loggedIn() == true) {
 										<div class="">
 											<select name="kategorier" id="kategori" class="form-control input-sm" required>
 												<option value="Diverse">Diverse</option>
-												<option value="Familien">For hele famielien</option>
+												<option value="Familien">For hele familien</option>
 												<option value="Fest">Fest</option>
 												<option value="Foredrag">Foredrag</option>
 												<option value="Hygge">Hygge</option>

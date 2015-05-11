@@ -4,7 +4,7 @@
 				<div class="col-md-4">
 					<ul>
 						<li><b>Kontakt</b></li>
-						<li>Badehus vej 9</li>
+						<li>Badehusvej 9</li>
 						<li>9000 Aalborg</li>
 						<li>Tlf: 12345678</li>
 						<li>E-mail: kontakt@eventit.dk</li>
@@ -14,22 +14,22 @@
 				<div class="col-md-4">
 					<ul>
 						<li><b>Hjælp</b></li>
-						<li>For telefon support: 87654321</li>
-						<li>For supportchat "Klick her"</li>
+						<li>Telefon support: 87654321</li>
+						<li>Supportchat "Klik her"</li>
 					</ul>
 				</div>
 
 				<div class="col-md-4">
 					<ul>
 						<li><b>Om os</b></li>
-						<li>Eventit.dk er ejet af Eventit A/S og blev lanceret i 2015, med henblik på at skabe overblik over hvad der sker i Aalborg by.</li>
+						<li>Eventit.dk er ejet af Eventit A/S, og blev lanceret i 2015, med henblik på at skabe overblik over hvad der sker i Aalborg by.</li>
 					</ul>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="copyright">
-					COPYRIGHT HAROLD 2015
+					COPYRIGHT EVENTIT A/S 2015
 				</div>
 			</div>
 		</div>
