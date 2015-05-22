@@ -20,6 +20,7 @@ if (isset($_GET['addevent']) && loggedIn() == true) {
 	<ol class="breadcrumb">
 		<li><a href="index.php">AalborgEvents</a></li>
 		<li><a href="eventliste.php">Arrangementer</a></li>
+		<li><a href="eventliste.php?kategori=<?=$event['kategorier']?>"><?=$event['kategorier']?></a></li>
 		<li class="active"><?=$event['eventnavn']?></li>
 	</ol>
 	<?php if (isset($_GET['addevent']) && loggedIn() == false) { ?>

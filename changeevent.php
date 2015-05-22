@@ -114,16 +114,16 @@ if ($event['bruger'] == $_SESSION['email']) {
 										<label for="kategori">Vælg en kategori:</label>
 										<div class="">
 											<select name="kategorier" id="kategori" class="form-control input-sm" required>
-												<option value="Diverse">Diverse</option>
-												<option value="Familien">For hele familien</option>
-												<option value="Fest">Fest</option>
-												<option value="Foredrag">Foredrag</option>
-												<option value="Hygge">Hygge</option>
-												<option value="Kunst">Kunst & kultur</option>
-												<option value="Mad">Mad & Drikke</option>
-												<option value="Musik">Musik</option>
-												<option value="Natur">Natur</option>
-												<option value="Sport">Sport & motion</option>
+												<option value="Diverse" <?=($event['kategorier'] == "Diverse") ? "selected='selected'" : ""?>>Diverse</option>
+												<option value="Familien" <?=($event['kategorier'] == "Familien") ? "selected='selected'" : ""?>>For hele familien</option>
+												<option value="Fest" <?=($event['kategorier'] == "Fest") ? "selected='selected'" : ""?>>Fest</option>
+												<option value="Foredrag" <?=($event['kategorier'] == "Foredrag") ? "selected='selected'" : ""?>>Foredrag</option>
+												<option value="Hygge" <?=($event['kategorier'] == "Hygge") ? "selected='selected'" : ""?>>Hygge</option>
+												<option value="Kunst" <?=($event['kategorier'] == "Kunst") ? "selected='selected'" : ""?>>Kunst & kultur</option>
+												<option value="Mad" <?=($event['kategorier'] == "Mad") ? "selected='selected'" : ""?>>Mad & Drikke</option>
+												<option value="Musik" <?=($event['kategorier'] == "Musik") ? "selected='selected'" : ""?>>Musik</option>
+												<option value="Natur" <?=($event['kategorier'] == "Natur") ? "selected='selected'" : ""?>>Natur</option>
+												<option value="Sport" <?=($event['kategorier'] == "Sport") ? "selected='selected'" : ""?>>Sport & motion</option>
 											</select>
 										</div>
 									</div>

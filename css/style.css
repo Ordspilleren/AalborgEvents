@@ -61,6 +61,10 @@ body {
 	FORSIDE
 */
 
+.jumbotron {
+	padding: 20px 0;
+}
+
 .eventkategorier {
 	list-style: none;
 	margin: 0px;

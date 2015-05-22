@@ -33,6 +33,7 @@ if (isset($_SESSION['fejl'])){
 									<label for="password">Adgangskode:</label>
 									<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Skriv dit password" required>
 								</div>
+								<p><a href="opretform.php">Opret bruger</a></form></p>
 								
 							<input type="submit" value="Login" class="btn btn-block">
 						</form>
