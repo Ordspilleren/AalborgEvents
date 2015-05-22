@@ -34,22 +34,22 @@ function echoActiveClassIfRequestMatches($requestUri)
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li <?=echoActiveClassIfRequestMatches("index.php")?>> 
-						<a href="index.php">Forside</a>
+						<a href="index.php"><i class="fa fa-home"></i> Forside</a>
 					</li>
 					<li <?=echoActiveClassIfRequestMatches("eventliste.php")?>> 
-						<a href="eventliste.php">Arrangementer</a>
+						<a href="eventliste.php"><i class="fa fa-bars"></i> Arrangementer</a>
 					</li>
 					<li <?=echoActiveClassIfRequestMatches("orglist.php")?>> 
-						<a href="orglist.php">Arrangører</a>
+						<a href="orglist.php"><i class="fa fa-sitemap"></i> Arrangører</a>
 					</li>
 					<li <?=echoActiveClassIfRequestMatches("loginform.php")?>> 
-						<a href="login.php"><?=(loggedIn() == true) ? "Log ud" : "Log ind"?></a>
+						<a href="login.php"><?=(loggedIn() == true) ? "<i class='fa fa-sign-out'></i> Log ud" : "<i class='fa fa-sign-in'></i> Log ind"?></a>
 					</li>
 					<li <?=echoActiveClassIfRequestMatches("opretform.php")?> <?=echoActiveClassIfRequestMatches("minside.php")?>>
-						<a href="opretform.php"><?=(loggedIn() == true) ? "Min side" : "Opret bruger"?></a>
+						<a href="opretform.php"><?=(loggedIn() == true) ? "Min side" : "<i class='fa fa-user'></i> Opret bruger"?></a>
 					</li>
 					<li	<?=echoActiveClassIfRequestMatches("opret-arrangement.php")?>> 
-						<a href="opret-arrangement.php">Opret arrangement</a>
+						<a href="opret-arrangement.php"><i class='fa fa-plus-square'></i> Opret arrangement</a>
 					</li>
 					
 				</ul>

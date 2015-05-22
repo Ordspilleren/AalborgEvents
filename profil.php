@@ -19,7 +19,7 @@ if (isset($_GET['follow']) && loggedIn() == true) {
 	<?php if (isset($_GET['follow']) && loggedIn() == false) { ?>
 	<div class="alert alert-danger" role="alert">Du skal være logget ind for at følge denne arrangør.</div>
 	<?php } else if (isset($_GET['follow']) && loggedIn() == true) { ?>
-	<div class="alert alert-success" role="alert">Du følger nu denne arrangør.</div>
+	<div class="alert alert-success" role="alert">Du følger nu denne arrangør. Arrangøren kan nu findes på din side.</div>
 	<?php } ?>
 
 	<div class="row">

@@ -3,6 +3,7 @@ session_start();
 require_once('database.php');
 include('header.php');
 
+// Sæt kategori til det valgte, ellers bliver den sat til Diverse
 if(isset($_GET['kategori'])) {
 	$kategori = $_GET['kategori'];
 } else {

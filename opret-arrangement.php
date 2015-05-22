@@ -56,7 +56,7 @@ if (loggedIn() == true) {
 								?>
 								<div class="col-sm-6">
 									<div class="form-group">
-											<label for="afholder">Arrangør:</label>
+										<label for="afholder">Arrangør:</label>
 										<div>
 											<input type="text" name="afholder" id="afholder" class="form-control input-sm" placeholder="Indtast arrangør" required>
 										</div>

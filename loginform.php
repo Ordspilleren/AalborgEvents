@@ -25,10 +25,12 @@ if (isset($_SESSION['fejl'])){
 						<form action="login.php" method="post">
 							
 								<div class="form-group">
+									<label for="email">E-mail adresse:</label>
 									<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Indtast din email" required>
 								</div>
 								
 								<div class="form-group">
+									<label for="password">Adgangskode:</label>
 									<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Skriv dit password" required>
 								</div>
 								

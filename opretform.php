@@ -39,30 +39,33 @@ if (isset($_SESSION['fejl'])){
 						<form action="opret.php" method="post" id="form">
 							
 								<div class="form-group">
+									<label for="fornavn">Fornavn:</label>
 									<input type="text" name="fornavn" id="fornavn" class="form-control input-sm" placeholder="Indtast dit fornavn" required>
 								</div>
 
 								<div class="form-group" id="efternavn">
+									<label for="efternavn">Efternavn:</label>
 									<input type="text" name="efternavn" class="form-control input-sm" placeholder="Indtast dit efternavn" required>
 								</div>
 
-
 								<div class="form-group">
+									<label for="email">E-mail adresse:</label>
 									<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Indtast din email" required>
 								</div>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
+											<label for="password">Adgangskode:</label>
 											<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Vælg et password" required>
 										</div>
 									</div>	
 									<div class="col-md-6">
 										<div class="form-group">
+											<label for="pw2">Bekræft adgangskode:</label>
 											<input type="password" name="pw2" id="pw2" class="form-control input-sm" placeholder="Bekræft dit password" required>
 										</div>
 									</div>
 								</div>
-								
 
 								<input type="submit" value="Opret bruger" class="btn btn-block">
 								<br/>
@@ -91,24 +94,29 @@ if (isset($_SESSION['fejl'])){
 							
 
 								<div class="form-group">
+									<label for="orgnavn">Organisationsnavn:</label>
 									<input type="text" name="orgnavn" id="orgnavn" class="form-control input-sm" placeholder="Indtast navnet på din organisation" required>
 								</div>
 								
 								<div class="form-group">
+									<label for="beskrivelse">Beskrivelse af organisation:</label>
 									<input type="text" class="form-control input-sm" name="beskrivelse" placeholder="Lav en kort beskrivelse af din organisation"></input>
 								</div>
 							
 								<div class="form-group">
+									<label for="email">E-mail adresse:</label>
 									<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Indtast en email" required>
 								</div>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
+											<label for="password">Adgangskode:</label>
 											<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Vælg et password" required>
 										</div>
 									</div>	
 									<div class="col-md-6">
 										<div class="form-group">
+											<label for="pw2">Bekræft adgangskode:</label>
 											<input type="password" name="pw2" id="pw2" class="form-control input-sm" placeholder="Bekræft dit password" required>
 										</div>
 									</div>

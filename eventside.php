@@ -83,7 +83,7 @@ if (isset($_GET['addevent']) && loggedIn() == true) {
 				
 				<p>
 					<strong>Starter:</strong><br/>
-					<time datetime="<?=$event['startdato']?>"><?=$event['startdato']?> </time><br/>
+					<time datetime="<?=$event['startdato']?>"><?=date("d/m/Y", strtotime($event['startdato']));?></time><br/>
 					<time datetime="<?=$event['starttid']?>"><?=$event['starttid']?></time>
 				</p>
 
@@ -92,7 +92,7 @@ if (isset($_GET['addevent']) && loggedIn() == true) {
 				?>
 				<p>
 					<strong>Slutter:</strong><br/>
-					<time datetime="<?=$event['slutdato']?>"><?=$event['slutdato']?> </time><br/>
+					<time datetime="<?=$event['slutdato']?>"><?=date("d/m/Y", strtotime($event['slutdato']));?></time><br/>
 					<time datetime="<?=$event['sluttid']?>"><?=$event['sluttid']?></time>
 				</p>
 				<?php

@@ -25,6 +25,7 @@ include('header.php');
 				<h2>Featured arrangementer</h2>
 				<ul class="event-list">
 					<?php
+					// Vælg events ud fra hvilke der er blevet tilføjet til "Min side" flest gange
 					$q = "SELECT * from Events inner join brugerfavoritter on brugerfavoritter.eventid=Events.ID GROUP BY eventid ORDER BY eventid LIMIT 5";
 					$events = $DBH->query($q);
 					$events->execute();
