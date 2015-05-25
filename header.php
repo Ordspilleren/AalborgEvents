@@ -14,7 +14,7 @@ function echoActiveClassIfRequestMatches($requestUri)
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>EventIT</title>
+	<title>Eventit</title>
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -37,7 +37,7 @@ function echoActiveClassIfRequestMatches($requestUri)
 						<a href="index.php"><i class="fa fa-home"></i> Forside</a>
 					</li>
 					<li <?=echoActiveClassIfRequestMatches("eventliste.php")?>> 
-						<a href="eventliste.php"><i class="fa fa-bars"></i> Arrangementer</a>
+						<a href="eventliste.php"><i class="fa fa-calendar"></i> Arrangementer</a>
 					</li>
 					<li <?=echoActiveClassIfRequestMatches("orglist.php")?>> 
 						<a href="orglist.php"><i class="fa fa-sitemap"></i> Arrangører</a>
@@ -46,7 +46,7 @@ function echoActiveClassIfRequestMatches($requestUri)
 						<a href="login.php"><?=(loggedIn() == true) ? "<i class='fa fa-sign-out'></i> Log ud" : "<i class='fa fa-sign-in'></i> Log ind"?></a>
 					</li>
 					<li <?=echoActiveClassIfRequestMatches("opretform.php")?> <?=echoActiveClassIfRequestMatches("minside.php")?>>
-						<a href="opretform.php"><?=(loggedIn() == true) ? "Min side" : "<i class='fa fa-user'></i> Opret bruger"?></a>
+						<a href="opretform.php"><?=(loggedIn() == true) ? "<i class='fa fa-bars'></i> Min side" : "<i class='fa fa-user'></i> Opret bruger"?></a>
 					</li>
 					<li	<?=echoActiveClassIfRequestMatches("opret-arrangement.php")?>> 
 						<a href="opret-arrangement.php"><i class='fa fa-plus-square'></i> Opret arrangement</a>

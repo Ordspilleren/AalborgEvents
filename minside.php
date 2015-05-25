@@ -77,7 +77,7 @@ $brugermail = $_SESSION['email'];
         </div>
 	</div>
 	<div class="row">			
-		<div class="col-md-12">
+		<div class="col-md-6">
 			<h2>Arrangementer fra arrangører du følger:</h2>
 			<ul class="event-list">
             	<?php
@@ -110,7 +110,25 @@ $brugermail = $_SESSION['email'];
 				</li>
 				<?php } } ?>
 			</ul>
-		</div>	
+		</div>
+		<div class="col-md-6">
+			<h2>Arrangører du følger:</h2>
+			<ul class="event-list-small">
+				<?php
+				$q = "SELECT * from Brugere inner join brugerfavoritter on brugerfavoritter.following=Brugere.ID WHERE brugerfavoritter.brugerid='$brugerid' AND brugerstatus = 1";
+				$orgs = $DBH->query($q);
+				$orgs->execute();
+				foreach ($orgs as $org) {
+				?>
+				<li>
+					<img alt="<?=$org['navn'];?>" src="img/brugerpic/<?=(empty($org['profilbanner'])) ? "default.png" : $org['profilbanner']?>" />
+					<div class="info">
+						<h1><a href="profil.php?profilid=<?=$org['ID'];?>"><?=$org['navn'];?></a></h1>
+					</div>
+				</li>
+					<?php } ?>
+			</ul>
+		</div>
 	</div>
 </div>
 <?php include('footer.php'); ?>
