@@ -22,7 +22,7 @@ include('header.php');
 		</div>
 		<div class="row">
 			<div class="col-md-8">
-				<h2>Featured arrangementer</h2>
+				<h2>Kommende arrangementer</h2>
 				<ul class="event-list">
 					<?php
 					// Vælg events ud fra hvilke der er blevet tilføjet til "Min side" flest gange
@@ -55,39 +55,69 @@ include('header.php');
 				</ul>
 			</div>
 			<div class="col-md-4">
-				<h2>Populære kategorier</h2>
+				<h2>Kategorier</h2>
 				<ul class="eventkategorier">
-					<li>
-						<a href="eventliste.php?kategori=Sport">
-							<img src="img/kategorier/sport.png" alt="">
-							<h2 class="title">Sport & Motion</h2>
-						</a>
-					</li>
-					<li>
-						<a href="eventliste.php?kategori=Musik">
-							<img src="img/kategorier/musik.png" alt="">
-							<h2 class="title">Musik</h2>
-						</a>
-					</li>
-					<li>
-						<a href="eventliste.php?kategori=Fest">
-							<img src="img/kategorier/fest.png" alt="">
-							<h2 class="title">Fest</h2>
-						</a>
-					</li>
-					<li>
-						<a href="eventliste.php?kategori=Foredrag">
-							<img src="img/kategorier/foredrag.png" alt="">
-							<h2 class="title">Foredrag</h2>
-						</a>
-					</li>
-					<li>
-						<a href="eventliste.php?kategori=Familien">
-							<img src="img/kategorier/familien.png" alt="">
-							<h2 class="title">For hele familien</h2>
-						</a>
-					</li>
-				</ul>
+				<li>
+					<a href="?kategori=Sport">
+						<img src="img/kategorier/sport.png" alt="">
+						<h2 class="title">Sport & Motion</h2>
+					</a>
+				</li>
+				<li>
+					<a href="?kategori=Musik">
+						<img src="img/kategorier/musik.png" alt="">
+						<h2 class="title">Musik</h2>
+					</a>
+				</li>
+				<li>
+					<a href="?kategori=Hygge">
+						<img src="img/kategorier/hygge.png" alt="">
+						<h2 class="title">Hygge</h2>
+					</a>
+				</li>
+				<li>
+					<a href="?kategori=Kunst">
+						<img src="img/kategorier/kunst.png" alt="">
+						<h2 class="title">Kunst & Kultur</h2>
+					</a>
+				</li>
+				<li>
+					<a href="?kategori=Mad">
+						<img src="img/kategorier/mad.png" alt="">
+						<h2 class="title">Mad & Drikke</h2>
+					</a>
+				</li>
+				<li>
+					<a href="?kategori=Natur">
+						<img src="img/kategorier/natur.png" alt="">
+						<h2 class="title">Natur</h2>
+					</a>
+				</li>
+				<li>
+					<a href="?kategori=Fest">
+						<img src="img/kategorier/fest.png" alt="">
+						<h2 class="title">Fest</h2>
+					</a>
+				</li>
+				<li>
+					<a href="?kategori=Foredrag">
+						<img src="img/kategorier/foredrag.png" alt="">
+						<h2 class="title">Foredrag</h2>
+					</a>
+				</li>
+				<li>
+					<a href="?kategori=Familien">
+						<img src="img/kategorier/familien.png" alt="">
+						<h2 class="title">For hele familien</h2>
+					</a>
+				</li>
+				<li>
+					<a href="?kategori=Diverse">
+						<img src="http://placehold.it/500x100" alt="">
+						<h2 class="title">Diverse</h2>
+					</a>
+				</li>
+			</ul>
 			</div>
 		</div>
 	</div>
